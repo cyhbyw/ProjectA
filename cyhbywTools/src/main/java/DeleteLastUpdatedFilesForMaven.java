@@ -36,6 +36,7 @@ public class DeleteLastUpdatedFilesForMaven {
     private void fileHandler(Path next) {
         if (next.getFileName().toString().endsWith(".lastUpdated")) {
             try {
+                System.out.println(next.getFileName().toString());
                 Files.delete(next);
             } catch (IOException e) {
                 e.printStackTrace();
