@@ -26,8 +26,9 @@ public class ConvertTableDefinitionToExcel {
     }
 
 
-    private static final String QUOT = "'";
-    private static final String FILE_SYSTEM_PATH = "E:\\txt\\db.sql";
+    private static final String QUOT = "`";
+    private static final String QUOT2 = "'";
+    private static final String FILE_SYSTEM_PATH = "E:\\txt\\db2.sql";
 
     private void start() throws IOException {
         List<ExcelContent> contentList = new ArrayList<>();
@@ -75,7 +76,8 @@ public class ConvertTableDefinitionToExcel {
     }
 
     private String sub(String s) {
-        return s.startsWith(QUOT) && s.endsWith(QUOT) ? s.substring(1, s.length() - 1) : s;
+        return (s.startsWith(QUOT) && s.endsWith(QUOT)) || (s.startsWith(QUOT2) && s.endsWith(QUOT2))
+                ? s.substring(1, s.length() - 1) : s;
     }
 
     private String findComment(List<String> split) {
