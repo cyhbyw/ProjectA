@@ -32,7 +32,7 @@ public class LogPick {
     }
 
     private void retrieveConfigArgument() throws IOException {
-        File configFile = new File("/home/omc/cyh/LogPick.config");
+        File configFile = new File("D:\\txt\\LogPick.config");
         BufferedReader bufferedReader = new LineNumberReader(new FileReader(configFile));
         String line;
 
@@ -79,7 +79,7 @@ public class LogPick {
     }
 
     private void writeToNewFile(StringBuffer sbContent, File oneFile) throws IOException {
-        File newFile = new File(oneFile.getParent() + File.separator + "logPick__2_" + oneFile.getName());
+        File newFile = new File(oneFile.getParent() + File.separator + "logPick_" + oneFile.getName());
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(newFile));
         bufferedWriter.write(sbContent.toString());
         bufferedWriter.flush();
