@@ -15,7 +15,7 @@ public class ReportFormat {
     private StringBuilder result = new StringBuilder();
 
     private void run() throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(new File("/home/omc/cyh/ReportFormat.in")));
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(new File("D:/txt/ReportFormat.in")));
         String line;
         while ((line = bufferedReader.readLine()) != null) {
             if (line.trim().isEmpty() || line.trim().charAt(0) == '#') {
@@ -50,7 +50,7 @@ public class ReportFormat {
         bufferedReader.close();
 
         try {
-            System.setOut(new PrintStream(new File("/home/omc/cyh/ReportFormat.out")));
+            System.setOut(new PrintStream(new File("D:/txt/ReportFormat.out")));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
