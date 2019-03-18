@@ -12,20 +12,32 @@ public class QuickSort {
     }
 
     private void run() {
-        int testCase = 10000000;
+        Random random = new Random();
+        int testCase = 30000000 + random.nextInt(100);
+        int[] count = new int[] {0, 0, 0};
+        int mod = 0;
         while (testCase-- > 0) {
-            int num = new Random().nextInt(20) + 1;
+            int num = random.nextInt(20) + 1;
             int[] array = new int[num];
             for (int x = 0; x < num; x++) {
-                array[x] = new Random().nextInt(20);
+                array[x] = random.nextInt(20);
             }
-            if ((testCase & 1) == 1) {
+            if (++mod == 3) {
+                mod = 0;
+            }
+            if (mod == 1) {
                 quickSort1(array, 0, num - 1);
-            } else {
+                count[1]++;
+            } else if (mod == 2) {
                 quickSort2(array, 0, num - 1);
+                count[2]++;
+            } else {
+                quickSort3(array, 0, num - 1);
+                count[0]++;
             }
             checkResult(array, num);
         }
+        System.err.println(Arrays.toString(count));
     }
 
     /**
@@ -86,6 +98,27 @@ public class QuickSort {
             array[j] = array[i];
             array[i] = temp;
         }
+    }
+
+    private void quickSort3(int[] array, int left, int right) {
+        if (left >= right) {
+            return;
+        }
+        int key = array[left];
+        int i = left, j = right;
+        while (i < j) {
+            while (i < j && array[j] >= key) {
+                j--;
+            }
+            array[i] = array[j];
+            while (i < j && array[i] <= key) {
+                i++;
+            }
+            array[j] = array[i];
+        }
+        array[i] = key;
+        quickSort3(array, left, i - 1);
+        quickSort3(array, i + 1, right);
     }
 
     private void checkResult(int[] array, int num) {
