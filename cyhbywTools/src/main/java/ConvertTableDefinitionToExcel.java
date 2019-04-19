@@ -49,7 +49,7 @@ public class ConvertTableDefinitionToExcel {
         writeToExcel(contentList);
     }
 
-    private List<String> selfSplit(String line) {
+    static List<String> selfSplit(String line) {
         List<String> result = new ArrayList<>();
         boolean inQuot = false;
         for (int index = 0; index < line.length();) {
@@ -75,12 +75,12 @@ public class ConvertTableDefinitionToExcel {
         return result;
     }
 
-    private String sub(String s) {
+    static String sub(String s) {
         return (s.startsWith(QUOT) && s.endsWith(QUOT)) || (s.startsWith(QUOT2) && s.endsWith(QUOT2))
                 ? s.substring(1, s.length() - 1) : s;
     }
 
-    private String findComment(List<String> split) {
+    static String findComment(List<String> split) {
         int end = split.size() - 1;
         for (int index = 0; index < end; index++) {
             if ("COMMENT".equalsIgnoreCase(split.get(index))) {
