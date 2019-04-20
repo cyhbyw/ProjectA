@@ -71,6 +71,9 @@ public class ConvertPdmSqlToInstanceField {
         if (type.startsWith("decimal")) {
             return "BigDecimal";
         }
+        if (type.startsWith("bigint")) {
+            return "Long";
+        }
         return "ERROR_TYPE";
     }
 
