@@ -11,6 +11,8 @@ import java.util.List;
 
 import com.cyh.consts.Constants;
 import com.cyh.data.structure.Graph;
+import com.cyh.factory.CalculatorFactory;
+import com.cyh.utils.TypeConvertUtils;
 
 /**
  * @author: CYH
@@ -24,9 +26,9 @@ public class Bootstrap {
 
     private void start() throws IOException, URISyntaxException {
         List<String> allLines = readInputFileContent();
-        String graphDescription = allLines.get(0);
+        String graphDescription = allLines.get(0).trim();
         initGraph(graphDescription);
-
+        handleRequest(allLines);
     }
 
     private List<String> readInputFileContent() throws IOException, URISyntaxException {
@@ -37,22 +39,20 @@ public class Bootstrap {
 
     private void initGraph(String graphDescription) {
         String[] desc = graphDescription.split(Constants.GRAPH_DESCRIPTION_SEPARATOR);
-        Graph graph = new Graph();
+        Graph graph = Graph.getInstance();
         for (String x : desc) {
-            int start = charToInt(x.charAt(0));
-            int end = charToInt(x.charAt(1));
+            int start = TypeConvertUtils.upperCharToInt(x.charAt(0));
+            int end = TypeConvertUtils.upperCharToInt(x.charAt(1));
             int distance = Integer.valueOf(x.substring(2));
-            graph.addEdge(start, end, distance);
+            graph.setDistance(start, end, distance);
         }
     }
 
-    /**
-     * 将 Char 转换为 Int 方便后续处理和使用
-     * @param ch
-     * @return
-     */
-    private int charToInt(char ch) {
-        return ch - 'A';
+    private void handleRequest(List<String> allLines) {
+        for (int index = 1; index < allLines.size(); index++) {
+            String input = allLines.get(index).trim();
+            System.out.println(String.format("Case #%d: %s", index, CalculatorFactory.calculate(input)));
+        }
     }
 
 }

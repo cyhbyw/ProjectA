@@ -10,28 +10,31 @@ import com.cyh.consts.Constants;
  */
 public class Graph {
 
-    private int[] head = new int[Constants.MAX_POINT_COUNT];
-    private Edge[] edges = new Edge[Constants.MAX_EDGE_COUNT];
-    private int edgeIndex = 0;
+    public static final Integer NON_EXISTENCE = -1;
 
-    public Graph() {
-        for (int i = 0; i < head.length; i++) {
-            head[i] = -1;
+    private int[][] distance = new int[Constants.MAX_POINT_COUNT][Constants.MAX_POINT_COUNT];
+
+    private Graph() {
+        for (int row = 0; row < distance.length; row++) {
+            for (int col = 0; col < distance[row].length; col++) {
+                distance[row][col] = NON_EXISTENCE;
+            }
         }
     }
 
-    public void addEdge(int start, int end, int distance) {
-        edges[edgeIndex] = new Edge();
-        edges[edgeIndex].end = end;
-        edges[edgeIndex].distance = distance;
-        edges[edgeIndex].next = head[start];
-        head[start] = edgeIndex++;
+    public static final class SingletonHolder {
+        private static final Graph INSTANCE = new Graph();
     }
 
-    class Edge {
-        int end;
-        int distance;
-        int next;
+    public static Graph getInstance() {
+        return SingletonHolder.INSTANCE;
     }
 
+    public void setDistance(int start, int end, int d) {
+        distance[start][end] = d;
+    }
+
+    public int[][] getDistance() {
+        return distance;
+    }
 }

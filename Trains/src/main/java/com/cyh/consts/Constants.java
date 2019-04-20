@@ -21,9 +21,4 @@ public interface Constants {
      */
     Integer MAX_POINT_COUNT = 26;
 
-    /**
-     * 最大的边数量
-     */
-    Integer MAX_EDGE_COUNT = 26 * 26;
-
 }
