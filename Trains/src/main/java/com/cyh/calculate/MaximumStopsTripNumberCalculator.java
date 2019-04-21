@@ -6,8 +6,8 @@ import com.cyh.utils.TypeConvertUtils;
 
 /**
  * 给出最大停顿次数，计算方案数量
- * @author: yanhua.chen
- * @date: 2019/4/20 16:11
+ * @author: CYH
+ * @date: @date: 2019/4/21
  */
 public class MaximumStopsTripNumberCalculator extends AbstractTripNumberCalculator {
 

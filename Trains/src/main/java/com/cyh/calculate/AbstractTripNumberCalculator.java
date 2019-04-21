@@ -9,7 +9,7 @@ import com.cyh.data.structure.Graph;
 
 /**
  * @author: CYH
- * @date: 2019/4/21 0021 10:53
+ * @date: 2019/4/21
  */
 public abstract class AbstractTripNumberCalculator implements Calculator {
 

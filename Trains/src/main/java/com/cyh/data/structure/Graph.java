@@ -4,9 +4,9 @@ import com.cyh.consts.Constants;
 
 /**
  * 数据结构：图
- * 具体存储的时候，用的是邻接表的方式
+ * 具体存储的时候，用的是矩阵的方式
  * @author: CYH
- * @date: 2019/4/19 0019 8:47
+ * @date: @date: 2019/4/21
  */
 public class Graph {
 

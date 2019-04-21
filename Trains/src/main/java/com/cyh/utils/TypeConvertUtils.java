@@ -1,8 +1,8 @@
 package com.cyh.utils;
 
 /**
- * @author: yanhua.chen
- * @date: 2019/4/20 17:00
+ * @author: CYH
+ * @date: @date: 2019/4/21
  */
 public final class TypeConvertUtils {
 

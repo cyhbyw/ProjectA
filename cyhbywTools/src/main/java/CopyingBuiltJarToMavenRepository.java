@@ -18,9 +18,9 @@ public class CopyingBuiltJarToMavenRepository {
         new CopyingBuiltJarToMavenRepository().run();
     }
 
-    private static final Path SPRING_ROOT_PATH = Paths.get("D:\\openSource\\spring_4_3_13\\spring-framework");
-    private static final String SPRING_VERSION = "4.3.13.RELEASE";
-    private static final Path MAVEN_ROOT_PATH = Paths.get("D:\\mvnRepo\\org\\springframework");
+    private static final Path SPRING_ROOT_PATH = Paths.get("D:\\openSource\\eureka_1_4_10\\eureka");
+    private static final String SPRING_VERSION = "1.4.10";
+    private static final Path MAVEN_ROOT_PATH = Paths.get("D:\\mvnRepo\\com\\netflix\\eureka");
 
     private void run() throws IOException {
         DirectoryStream<Path> directoryStream = Files.newDirectoryStream(SPRING_ROOT_PATH);
@@ -28,7 +28,7 @@ public class CopyingBuiltJarToMavenRepository {
         while (iterator.hasNext()) {
             Path module = iterator.next();
             String moduleName = module.getFileName().toString();
-            if (!Files.isDirectory(module) || !moduleName.startsWith("spring-")) {
+            if (!Files.isDirectory(module) || !moduleName.startsWith("eureka")) {
                 continue;
             }
             List<String> jarFileNames = buildJarFileNames(moduleName);

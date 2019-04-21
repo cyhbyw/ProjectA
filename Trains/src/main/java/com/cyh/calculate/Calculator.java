@@ -3,8 +3,8 @@ package com.cyh.calculate;
 import java.util.regex.Matcher;
 
 /**
- * @author: yanhua.chen
- * @date: 2019/4/20 16:00
+ * @author: CYH
+ * @date: 2019/4/21
  */
 public interface Calculator {
 

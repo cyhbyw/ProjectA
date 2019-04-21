@@ -8,8 +8,8 @@ import com.cyh.utils.TypeConvertUtils;
 
 /**
  * 计算指定路径的总距离
- * @author: yanhua.chen
- * @date: 2019/4/20 16:03
+ * @author: CYH
+ * @date: @date: 2019/4/21
  */
 public class TotalDistanceCalculator implements Calculator {
 
