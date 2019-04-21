@@ -2,6 +2,7 @@ package com.cyh.calculate;
 
 import java.util.regex.Matcher;
 
+import com.cyh.consts.Constants;
 import com.cyh.data.structure.Graph;
 import com.cyh.utils.TypeConvertUtils;
 
@@ -25,7 +26,7 @@ public class TotalDistanceCalculator implements Calculator {
             int curVertex = TypeConvertUtils.upperCharToInt(vertex[x]);
             int distance = Graph.getInstance().getDistance()[preVertex][curVertex];
             if (distance == Graph.NON_EXISTENCE) {
-                return "No Such Route";
+                return Constants.NO_SUCH_ROUTE;
             }
             totalDistance += distance;
         }

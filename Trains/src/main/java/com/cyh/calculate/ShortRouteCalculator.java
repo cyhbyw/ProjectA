@@ -1,7 +1,5 @@
 package com.cyh.calculate;
 
-import java.util.Objects;
-import java.util.PriorityQueue;
 import java.util.regex.Matcher;
 
 import com.cyh.consts.Constants;
@@ -19,7 +17,7 @@ public class ShortRouteCalculator implements Calculator {
     public String calculate(String input, Matcher matcher) {
         int start = TypeConvertUtils.stringToInt(matcher.group("start"));
         int end = TypeConvertUtils.stringToInt(matcher.group("end"));
-        return String.valueOf(dijastra(start, end));
+        return dijastra(start, end);
     }
 
     /**
@@ -28,32 +26,43 @@ public class ShortRouteCalculator implements Calculator {
      * @param end 终点
      * @return 最短路径
      */
-    private long dijastra(int start, int end) {
+    private String dijastra(int start, int end) {
         final int[][] distance = Graph.getInstance().getDistance();
-        int[] minDistance = initMinDistance();
-        minDistance[start] = 0;
-        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
-        priorityQueue.add(start);
-        //boolean[] visited = initVisited();
-        //visited[start] = true;
-        for (int cur = 0; cur < Constants.MAX_POINT_COUNT; cur++) {
-            Integer top = priorityQueue.poll();
-            if (Objects.isNull(top)) {
-                break;
-            }
-            for (int next = 0; next < Constants.MAX_POINT_COUNT; next++) {
-                if (distance[top][next] != Graph.NON_EXISTENCE) {
-                    int tempDistance = minDistance[top] + distance[top][next];
-                    if (minDistance[next] == Graph.NON_EXISTENCE || minDistance[next] > tempDistance) {
-                        minDistance[next] = tempDistance;
-                        priorityQueue.add(next);
+        int[] minDis = initMinDistance();
+        minDis[start] = 0;
+        boolean[] visited = initVisited();
+        boolean vertexEquals = (start == end);
+        boolean reset = false;
+        for (int loop = 0; loop < Constants.MAX_POINT_COUNT; loop++) {
+            int min = Graph.NON_EXISTENCE;
+            int u = Graph.NON_EXISTENCE;
+            for (int i = 0; i < Constants.MAX_POINT_COUNT; i++) {
+                if (!visited[i] && minDis[i] != Graph.NON_EXISTENCE) {
+                    if (min == Graph.NON_EXISTENCE || min > minDis[i]) {
+                        min = minDis[i];
+                        u = i;
                     }
                 }
             }
-
+            if (min == Graph.NON_EXISTENCE) {
+                break;
+            }
+            visited[u] = true;
+            for (int j = 0; j < Constants.MAX_POINT_COUNT; j++) {
+                if (!visited[j] && distance[u][j] != Graph.NON_EXISTENCE) {
+                    if (minDis[j] == Graph.NON_EXISTENCE || minDis[j] > minDis[u] + distance[u][j]) {
+                        minDis[j] = minDis[u] + distance[u][j];
+                    }
+                }
+            }
+            if (vertexEquals && u == start && !reset) {
+                visited[start] = false;
+                minDis[start] = Graph.NON_EXISTENCE;
+                reset = true;
+            }
 
         }
-
+        return minDis[end] == Graph.NON_EXISTENCE ? Constants.NO_SUCH_ROUTE : String.valueOf(minDis[end]);
     }
 
     private int[] initMinDistance() {

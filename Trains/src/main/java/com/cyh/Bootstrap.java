@@ -21,18 +21,19 @@ import com.cyh.utils.TypeConvertUtils;
 public class Bootstrap {
 
     public static void main(String[] args) throws Exception {
-        new Bootstrap().start();
+        new Bootstrap().start(args);
     }
 
-    private void start() throws IOException, URISyntaxException {
-        List<String> allLines = readInputFileContent();
+    private void start(String[] args) throws IOException, URISyntaxException {
+        List<String> allLines = readInputFileContent(args);
         String graphDescription = allLines.get(0).trim();
         initGraph(graphDescription);
         handleRequest(allLines);
     }
 
-    private List<String> readInputFileContent() throws IOException, URISyntaxException {
-        URI uri = this.getClass().getClassLoader().getResource(Constants.INPUT_FILE_NAME).toURI();
+    private List<String> readInputFileContent(String[] args) throws IOException, URISyntaxException {
+        String fileName = (args.length >= 1 ? args[0] : Constants.INPUT_FILE_NAME);
+        URI uri = this.getClass().getClassLoader().getResource(fileName).toURI();
         Path path = Paths.get(uri);
         return Files.readAllLines(path, StandardCharsets.UTF_8);
     }
@@ -51,7 +52,7 @@ public class Bootstrap {
     private void handleRequest(List<String> allLines) {
         for (int index = 1; index < allLines.size(); index++) {
             String input = allLines.get(index).trim();
-            System.out.println(String.format("Case #%d: %s", index, CalculatorFactory.calculate(input)));
+            System.out.println(String.format("Output #%d: %s", index, CalculatorFactory.calculate(input)));
         }
     }
 

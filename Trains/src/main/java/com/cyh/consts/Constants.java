@@ -21,4 +21,9 @@ public interface Constants {
      */
     Integer MAX_POINT_COUNT = 26;
 
+    /**
+     * 路径不存在时的输出信息
+     */
+    String NO_SUCH_ROUTE = "NO SUCH ROUTE";
+
 }

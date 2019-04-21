@@ -1,0 +1,8 @@
+AB5, BC4, CD8, DC8, DE6, AD5, CE2, EB3, AE7
+The length of the shortest route (in terms of distance to travel) from A to C.
+The length of the shortest route (in terms of distance to travel) from A to D.
+The length of the shortest route (in terms of distance to travel) from B to C.
+The length of the shortest route (in terms of distance to travel) from B to D.
+The length of the shortest route (in terms of distance to travel) from E to C.
+The length of the shortest route (in terms of distance to travel) from E to D.
+The length of the shortest route (in terms of distance to travel) from E to A.
