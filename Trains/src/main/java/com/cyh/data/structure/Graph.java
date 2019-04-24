@@ -22,7 +22,7 @@ public class Graph {
         }
     }
 
-    public static final class SingletonHolder {
+    private static final class SingletonHolder {
         private static final Graph INSTANCE = new Graph();
     }
 
