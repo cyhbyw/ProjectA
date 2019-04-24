@@ -12,12 +12,12 @@ import com.cyh.utils.TypeConvertUtils;
 /**
  * 在总距离满足的前提下，计算方案数量
  * @author: CYH
- * @date: @date: 2019/4/21
+ * @date: 2019/4/21
  */
-public class RouteNumberCalculator implements Calculator {
+public class RouteNumberCalculator extends CalculatorAdapter {
 
     @Override
-    public String calculate(String input, Matcher matcher) {
+    public String calculate(Matcher matcher) {
         int start = TypeConvertUtils.stringToInt(matcher.group("start"));
         int end = TypeConvertUtils.stringToInt(matcher.group("end"));
         int maxDistance = Integer.valueOf(matcher.group("maxDistance"));
@@ -25,7 +25,7 @@ public class RouteNumberCalculator implements Calculator {
     }
 
     private String BFS(int start, int end, int maxDistance) {
-        final int[][] distance = Graph.getInstance().getDistance();
+        final int[][] distance = getGraphDistance();
         Queue<BFSNode> queue = new ArrayDeque<>();
         queue.add(new BFSNode(start, 0));
         int resultCount = 0;

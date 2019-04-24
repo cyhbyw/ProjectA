@@ -9,12 +9,12 @@ import com.cyh.utils.TypeConvertUtils;
 /**
  * 计算最短路径
  * @author: CYH
- * @date: @date: 2019/4/21
+ * @date: 2019/4/21
  */
-public class ShortRouteCalculator implements Calculator {
+public class ShortRouteCalculator extends CalculatorAdapter {
 
     @Override
-    public String calculate(String input, Matcher matcher) {
+    public String calculate(Matcher matcher) {
         int start = TypeConvertUtils.stringToInt(matcher.group("start"));
         int end = TypeConvertUtils.stringToInt(matcher.group("end"));
         return dijastra(start, end);
@@ -27,7 +27,7 @@ public class ShortRouteCalculator implements Calculator {
      * @return 最短路径
      */
     private String dijastra(int start, int end) {
-        final int[][] distance = Graph.getInstance().getDistance();
+        final int[][] distance = getGraphDistance();
         int[] minDis = initMinDistance();
         minDis[start] = 0;
         boolean[] visited = initVisited();

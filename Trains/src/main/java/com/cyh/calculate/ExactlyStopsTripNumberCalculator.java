@@ -12,7 +12,7 @@ import com.cyh.utils.TypeConvertUtils;
 public class ExactlyStopsTripNumberCalculator extends AbstractTripNumberCalculator {
 
     @Override
-    public String calculate(String input, Matcher matcher) {
+    public String calculate(Matcher matcher) {
         int start = TypeConvertUtils.stringToInt(matcher.group("start"));
         int end = TypeConvertUtils.stringToInt(matcher.group("end"));
         int exactlyStops = Integer.valueOf(matcher.group("exactlyStops"));

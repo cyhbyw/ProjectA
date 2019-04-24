@@ -11,13 +11,13 @@ import com.cyh.data.structure.Graph;
  * @author: CYH
  * @date: 2019/4/21
  */
-public abstract class AbstractTripNumberCalculator implements Calculator {
+public abstract class AbstractTripNumberCalculator extends CalculatorAdapter {
 
     /**
      * 使用 BFS 算法搜索符合条件的方案数量
      */
     protected String BFS(int start, int end, int maxOrExactlyStops) {
-        final int[][] distance = Graph.getInstance().getDistance();
+        final int[][] distance = getGraphDistance();
         Queue<BFSNode> queue = new ArrayDeque<>();
         queue.add(new BFSNode(0, start));
         int resultCount = 0;

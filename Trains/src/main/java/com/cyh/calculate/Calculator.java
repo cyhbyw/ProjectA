@@ -9,11 +9,16 @@ import java.util.regex.Matcher;
 public interface Calculator {
 
     /**
+     * 获取图信息
+     * @return
+     */
+    int[][] getGraphDistance();
+
+    /**
      * 计算结果
-     * @param input
      * @param matcher
      * @return
      */
-    String calculate(String input, Matcher matcher);
+    String calculate(Matcher matcher);
 
 }

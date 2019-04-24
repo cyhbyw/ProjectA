@@ -12,7 +12,7 @@ import com.cyh.utils.TypeConvertUtils;
 public class MaximumStopsTripNumberCalculator extends AbstractTripNumberCalculator {
 
     @Override
-    public String calculate(String input, Matcher matcher) {
+    public String calculate(Matcher matcher) {
         int start = TypeConvertUtils.stringToInt(matcher.group("start"));
         int end = TypeConvertUtils.stringToInt(matcher.group("end"));
         int maximumStops = Integer.valueOf(matcher.group("maximumStops"));
