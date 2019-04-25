@@ -6,3 +6,4 @@ The length of the shortest route (in terms of distance to travel) from B to D.
 The length of the shortest route (in terms of distance to travel) from E to C.
 The length of the shortest route (in terms of distance to travel) from E to D.
 The length of the shortest route (in terms of distance to travel) from E to A.
+error input

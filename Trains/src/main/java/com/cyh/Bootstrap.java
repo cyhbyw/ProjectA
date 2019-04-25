@@ -72,7 +72,13 @@ public class Bootstrap {
     private void handleRequest(List<String> allLines) {
         for (int index = 1; index < allLines.size(); index++) {
             String input = allLines.get(index).trim();
-            System.out.println(String.format("Output #%d: %s", index, CalculatorFactory.calculate(input)));
+            String result = null;
+            try {
+                result = CalculatorFactory.calculate(input);
+            } catch (Exception e) {
+                LOGGER.warn("Failed to handle the input line: {}", input, e);
+            }
+            System.out.println(String.format("Output #%d: %s", index, result));
         }
     }
 
