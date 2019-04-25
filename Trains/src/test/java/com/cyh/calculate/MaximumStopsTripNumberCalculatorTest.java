@@ -10,7 +10,7 @@ import com.cyh.consts.Constants;
 
 /**
  * @author: CYH
- * @date: 2019/4/25 0025 8:36
+ * @date: 2019/4/25
  */
 public class MaximumStopsTripNumberCalculatorTest extends BaseCalculatorTest {
 

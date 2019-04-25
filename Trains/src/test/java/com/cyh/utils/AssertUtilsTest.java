@@ -4,7 +4,7 @@ import org.junit.Test;
 
 /**
  * @author: CYH
- * @date: 2019/4/24 17:12
+ * @date: 2019/4/24
  */
 public class AssertUtilsTest {
 
