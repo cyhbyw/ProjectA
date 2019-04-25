@@ -7,13 +7,12 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.cyh.consts.Constants;
-import com.cyh.data.structure.Graph;
 
 /**
  * @author: CYH
  * @date: 2019/4/25 0025 8:22
  */
-public class RouteNumberCalculatorTest {
+public class RouteNumberCalculatorTest extends BaseCalculatorTest {
 
     private static RouteNumberCalculator calculator;
 
@@ -22,18 +21,18 @@ public class RouteNumberCalculatorTest {
         calculator = new RouteNumberCalculator() {
             @Override
             public int[][] getGraphDistance() {
-                return buildGraph().getDistance();
+                return buildGraph();
             }
         };
     }
 
-    private static Graph buildGraph() {
-        Graph graph = Graph.getInstance();
-        graph.setDistance(0, 1, 1);
-        graph.setDistance(0, 2, 2);
-        graph.setDistance(1, 3, 3);
-        graph.setDistance(2, 3, 4);
-        return graph;
+    private static int[][] buildGraph() {
+        int[][] distance = initDistance();
+        distance[0][1] = 1;
+        distance[0][2] = 2;
+        distance[1][3] = 3;
+        distance[2][3] = 4;
+        return distance;
     }
 
     /**

@@ -7,13 +7,12 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.cyh.consts.Constants;
-import com.cyh.data.structure.Graph;
 
 /**
  * @author: CYH
  * @date: 2019/4/25 0025 8:45
  */
-public class ExactlyStopsTripNumberCalculatorTest {
+public class ExactlyStopsTripNumberCalculatorTest extends BaseCalculatorTest {
 
     private static ExactlyStopsTripNumberCalculator calculator;
 
@@ -22,19 +21,19 @@ public class ExactlyStopsTripNumberCalculatorTest {
         calculator = new ExactlyStopsTripNumberCalculator() {
             @Override
             public int[][] getGraphDistance() {
-                return buildGraph().getDistance();
+                return buildGraph();
             }
         };
     }
 
-    private static Graph buildGraph() {
-        Graph graph = Graph.getInstance();
-        graph.setDistance(0, 1, 1);
-        graph.setDistance(0, 2, 1);
-        graph.setDistance(1, 3, 1);
-        graph.setDistance(2, 3, 1);
-        graph.setDistance(0, 3, 1);
-        return graph;
+    private static int[][] buildGraph() {
+        int[][] distance = initDistance();
+        distance[0][1] = 1;
+        distance[0][2] = 1;
+        distance[1][3] = 1;
+        distance[2][3] = 1;
+        distance[0][3] = 1;
+        return distance;
     }
 
     /**

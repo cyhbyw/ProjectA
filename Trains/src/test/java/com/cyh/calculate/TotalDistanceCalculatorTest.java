@@ -6,13 +6,12 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import com.cyh.consts.Constants;
-import com.cyh.data.structure.Graph;
 
 /**
  * @author: CYH
  * @date: 2019/4/24
  */
-public class TotalDistanceCalculatorTest {
+public class TotalDistanceCalculatorTest extends BaseCalculatorTest {
 
     private TotalDistanceCalculator totalDistanceCalculator;
 
@@ -20,16 +19,16 @@ public class TotalDistanceCalculatorTest {
         totalDistanceCalculator = new TotalDistanceCalculator() {
             @Override
             public int[][] getGraphDistance() {
-                return buildGraph().getDistance();
+                return buildGraph();
             }
         };
     }
 
-    private Graph buildGraph() {
-        Graph graph = Graph.getInstance();
-        graph.setDistance(0, 1, 100);
-        graph.setDistance(1, 2, 200);
-        return graph;
+    private int[][] buildGraph() {
+        int[][] distance = initDistance();
+        distance[0][1] = 100;
+        distance[1][2] = 200;
+        return distance;
     }
 
     @Test

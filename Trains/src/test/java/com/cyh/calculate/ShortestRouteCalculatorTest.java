@@ -7,13 +7,12 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.cyh.consts.Constants;
-import com.cyh.data.structure.Graph;
 
 /**
  * @author: CYH
  * @date: 2019/4/24
  */
-public class ShortestRouteCalculatorTest {
+public class ShortestRouteCalculatorTest extends BaseCalculatorTest {
 
     private static ShortestRouteCalculator calculator;
 
@@ -22,23 +21,23 @@ public class ShortestRouteCalculatorTest {
         calculator = new ShortestRouteCalculator() {
             @Override
             public int[][] getGraphDistance() {
-                return buildGraph().getDistance();
+                return buildGraph();
             }
         };
     }
 
-    private static Graph buildGraph() {
-        Graph graph = Graph.getInstance();
-        graph.setDistance(0, 1, 5);
-        graph.setDistance(1, 2, 4);
-        graph.setDistance(2, 3, 8);
-        graph.setDistance(3, 2, 8);
-        graph.setDistance(3, 4, 6);
-        graph.setDistance(0, 3, 5);
-        graph.setDistance(0, 4, 7);
-        graph.setDistance(2, 4, 2);
-        graph.setDistance(4, 1, 3);
-        return graph;
+    private static int[][] buildGraph() {
+        int[][] distance = initDistance();
+        distance[0][1] = 5;
+        distance[1][2] = 4;
+        distance[2][3] = 8;
+        distance[3][2] = 8;
+        distance[3][4] = 6;
+        distance[0][3] = 5;
+        distance[0][4] = 7;
+        distance[2][4] = 2;
+        distance[4][1] = 3;
+        return distance;
     }
 
     @Test
