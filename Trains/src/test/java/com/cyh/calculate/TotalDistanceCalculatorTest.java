@@ -36,7 +36,7 @@ public class TotalDistanceCalculatorTest {
     public void test_calculate_givenValidGraph_expectedValidResult() {
         init();
         final String expectedResult = "300";
-        Matcher matcher = Constants.ROUTE_DISTANCE.matcher("The distance of the route A-B-C.");
+        Matcher matcher = Constants.TOTAL_DISTANCE.matcher("The distance of the route A-B-C.");
         matcher.find();
         String result = totalDistanceCalculator.calculate(matcher);
         Assert.assertEquals(expectedResult, result);
@@ -48,7 +48,7 @@ public class TotalDistanceCalculatorTest {
     @Test
     public void test_calculate_givenInvalidGraph_expectedConstResult() {
         init();
-        Matcher matcher = Constants.ROUTE_DISTANCE.matcher("The distance of the route A-C.");
+        Matcher matcher = Constants.TOTAL_DISTANCE.matcher("The distance of the route A-C.");
         matcher.find();
         String result = totalDistanceCalculator.calculate(matcher);
         Assert.assertEquals(Constants.NO_SUCH_ROUTE, result);
@@ -59,7 +59,7 @@ public class TotalDistanceCalculatorTest {
      */
     @Test
     public void test_calculate_givenEmptyGraph_expectedConstResult() {
-        Matcher matcher = Constants.ROUTE_DISTANCE.matcher("The distance of the route A-C.");
+        Matcher matcher = Constants.TOTAL_DISTANCE.matcher("The distance of the route A-C.");
         matcher.find();
         String result = new TotalDistanceCalculator().calculate(matcher);
         Assert.assertEquals(Constants.NO_SUCH_ROUTE, result);

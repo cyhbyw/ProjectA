@@ -11,7 +11,7 @@ import com.cyh.utils.TypeConvertUtils;
  * @author: CYH
  * @date: 2019/4/21
  */
-public class ShortRouteCalculator extends CalculatorAdapter {
+public class ShortestRouteCalculator extends CalculatorAdapter {
 
     @Override
     public String calculate(Matcher matcher) {
