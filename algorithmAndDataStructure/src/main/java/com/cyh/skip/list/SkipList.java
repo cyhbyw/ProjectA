@@ -33,35 +33,26 @@ public class SkipList {
     }
 
     public void insert(int value) {
-        int level = randomLevel();
-        Node newNode = new Node();
-        newNode.data = value;
-        newNode.maxLevel = level;
-        Node[] update = new Node[level];
-        for (int i = 0; i < level; ++i) {
-            update[i] = head;
-        }
-
-        // record every level largest value which smaller than insert value in update[]
+        final int level = randomLevel();
+        // 记录每一层中小于插入值的最大值，也就是找到单链表中的前驱节点
+        Node[] maxSmallerThan = new Node[level];
         Node p = head;
         for (int i = level - 1; i >= 0; --i) {
             while (p.forwards[i] != null && p.forwards[i].data < value) {
                 p = p.forwards[i];
             }
-            // use update save node in search path
-            update[i] = p;
+            maxSmallerThan[i] = p;
         }
 
-        // in search path node next node become new node forwords(next)
+        Node newNode = new Node();
+        newNode.data = value;
+        newNode.maxLevel = level;
         for (int i = 0; i < level; ++i) {
-            newNode.forwards[i] = update[i].forwards[i];
-            update[i].forwards[i] = newNode;
+            newNode.forwards[i] = maxSmallerThan[i].forwards[i];
+            maxSmallerThan[i].forwards[i] = newNode;
         }
 
-        // update node hight
-        if (levelCount < level) {
-            levelCount = level;
-        }
+        levelCount = Math.max(levelCount, level);
     }
 
     public void delete(int value) {

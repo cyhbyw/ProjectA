@@ -8,14 +8,33 @@ import org.junit.Test;
  */
 public class SkipListTest {
 
+    /**
+     * 插入时，故意打乱数字的大小顺序，方便分析源码: 1 -> 4 -> 3 -> 7 -> 5
+     * 如果全部是从小到大的顺序，要不得
+     */
     @Test
-    public void test_insert() {
+    public void test_insertAndFind() {
         SkipList skipList = new SkipList();
         skipList.insert(1);
-        skipList.insert(3);
+        System.out.println(skipList.find(1));
+
         skipList.insert(4);
-        skipList.insert(5);
+        System.out.println(skipList.find(1));
+        System.out.println(skipList.find(4));
+
+        skipList.insert(3);
+        System.out.println(skipList.find(1));
+        System.out.println(skipList.find(3));
+        System.out.println(skipList.find(4));
+
         skipList.insert(7);
+        System.out.println(skipList.find(7));
+
+        skipList.insert(5);
+        System.out.println(skipList.find(3));
+        System.out.println(skipList.find(5));
+        System.out.println(skipList.find(7));
+
         skipList.insert(8);
         skipList.insert(9);
         skipList.insert(10);
