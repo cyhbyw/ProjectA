@@ -22,4 +22,23 @@ public class KMP {
         return next;
     }
 
+    public static int[] getNexts(String s) {
+        final char[] b = s.toCharArray();
+        final int len = b.length;
+        int[] next = new int[len];
+        next[0] = -1;
+        int k = -1;
+        for (int j = 1; j < len; ++j) {
+            while (k != -1 && b[k + 1] != b[j]) {
+                k = next[k];
+            }
+            if (b[k + 1] == b[j]) {
+                ++k;
+            }
+            next[j] = k;
+        }
+        return next;
+    }
+
+
 }
