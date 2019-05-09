@@ -18,6 +18,12 @@ public class KMPTest {
 
     @Test
     public void test_getNext_2() {
+        int[] next = KMP.getNext("abacDababC");
+        System.out.println(Arrays.toString(next));
+    }
+
+    @Test
+    public void test_getNext_3() {
         int[] next = KMP.getNext("abcabdabcabX");
         System.out.println(Arrays.toString(next));
     }
