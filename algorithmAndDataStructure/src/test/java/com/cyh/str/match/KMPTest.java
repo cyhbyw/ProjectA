@@ -27,4 +27,11 @@ public class KMPTest {
         int[] next = KMP.getNext("abcabdabcabX");
         System.out.println(Arrays.toString(next));
     }
+
+
+
+    @Test
+    public void test_KMP_1() {
+        System.out.println(KMP.KMP("ABABAC", "ABAC"));
+    }
 }

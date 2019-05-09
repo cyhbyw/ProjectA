@@ -43,11 +43,13 @@ public class KMP {
             if (j == -1 || t[i] == p[j]) {
                 i++;
                 j++;
+                System.out.println(String.format("(i++, j++): i=%d j=%d", i, j));
             } else {
                 // i不需要回溯了
                 // j回到指定位置
                 // i = i - j + 1;
                 j = next[j];
+                System.out.println(String.format("(j = next[j]): i=%d j=%d", i, j));
             }
         }
         return j == p.length ? i - j : -1;
