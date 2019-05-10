@@ -1,6 +1,9 @@
 package com.cyh.str.match;
 
 /**
+ * KMP算法的理解与实现，参照下文：
+ * https://www.cnblogs.com/yjiyjige/p/3263858.html
+ *
  * @author: CYH
  * @date: 2019/5/8 0008 8:24
  */
@@ -21,7 +24,7 @@ public class KMP {
         return next;
     }
 
-    private static int[] initNext(int length) {
+    static int[] initNext(int length) {
         int[] next = new int[length];
         next[0] = -1;
         for (int x = 1; x < length; x++) {
@@ -30,7 +33,7 @@ public class KMP {
         return next;
     }
 
-    public static int KMP(String ts, String ps) {
+    public static int kmp(String ts, String ps) {
         final int[] next = getNext(ps);
         final char[] t = ts.toCharArray();
         final char[] p = ps.toCharArray();
@@ -53,23 +56,6 @@ public class KMP {
             }
         }
         return j == p.length ? i - j : -1;
-    }
-
-    public static int[] getNexts(String s) {
-        final char[] b = s.toCharArray();
-        final int len = b.length;
-        int[] next = initNext(len);
-        int k = -1;
-        for (int j = 1; j < len; ++j) {
-            while (k != -1 && b[k + 1] != b[j]) {
-                k = next[k];
-            }
-            if (b[k + 1] == b[j]) {
-                ++k;
-            }
-            next[j] = k;
-        }
-        return next;
     }
 
 
