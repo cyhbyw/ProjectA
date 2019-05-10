@@ -34,4 +34,14 @@ public class KMPTest {
     public void test_KMP_1() {
         System.out.println(KMP.kmp("ABABAC", "ABAC"));
     }
+
+    @Test
+    public void test_KMP_2() {
+        System.out.println(KMP.kmp("ABACXY", "ABAB"));
+    }
+
+    @Test
+    public void test_KMP_3() {
+        System.out.println(KMP.kmp("ABCABCXYZ", "ABCABB"));
+    }
 }
