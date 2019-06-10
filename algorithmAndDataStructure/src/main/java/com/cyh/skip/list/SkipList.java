@@ -56,19 +56,19 @@ public class SkipList {
     }
 
     public void delete(int value) {
-        Node[] update = new Node[levelCount];
+        Node[] maxSmallerThan = new Node[levelCount];
         Node p = head;
         for (int i = levelCount - 1; i >= 0; --i) {
             while (p.forwards[i] != null && p.forwards[i].data < value) {
                 p = p.forwards[i];
             }
-            update[i] = p;
+            maxSmallerThan[i] = p;
         }
 
         if (p.forwards[0] != null && p.forwards[0].data == value) {
             for (int i = levelCount - 1; i >= 0; --i) {
-                if (update[i].forwards[i] != null && update[i].forwards[i].data == value) {
-                    update[i].forwards[i] = update[i].forwards[i].forwards[i];
+                if (maxSmallerThan[i].forwards[i] != null && maxSmallerThan[i].forwards[i].data == value) {
+                    maxSmallerThan[i].forwards[i] = maxSmallerThan[i].forwards[i].forwards[i];
                 }
             }
         }
