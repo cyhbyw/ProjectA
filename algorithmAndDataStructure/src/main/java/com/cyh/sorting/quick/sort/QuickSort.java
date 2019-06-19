@@ -3,6 +3,8 @@ package com.cyh.sorting.quick.sort;
 import java.util.Arrays;
 import java.util.Random;
 
+import com.cyh.sorting.SortUtils;
+
 /**
  * @author: CYH
  * @date: 2019/3/17 0017 11:23
@@ -37,12 +39,13 @@ public class QuickSort {
                 quickSort3(array, 0, num - 1);
                 count[0]++;
             }
-            checkResult(array, num);
+            SortUtils.checkResult(array);
         }
         System.err.println(Arrays.toString(count));
     }
 
     /**
+     * 单边扫描
      * 选择最右边的数字作为基准，从左往右遍历，找到第一个比临界值大的数所在的位置
      * @param array
      * @param p 闭区间
@@ -69,6 +72,7 @@ public class QuickSort {
     }
 
     /**
+     * 单边扫描
      * 选择最左边的数字作为基准，从右往左遍历，找到最后一个比临界值小的数所在的位置
      * @param array
      * @param p 闭区间
@@ -102,6 +106,9 @@ public class QuickSort {
         }
     }
 
+    /**
+     * 双边扫描
+     */
     private void quickSort3(int[] array, int left, int right) {
         if (left >= right) {
             return;
@@ -121,18 +128,6 @@ public class QuickSort {
         array[i] = key;
         quickSort3(array, left, i - 1);
         quickSort3(array, i + 1, right);
-    }
-
-    private void checkResult(int[] array, int num) {
-        if (num <= 1) {
-            return;
-        }
-        for (int i = 1; i < num; i++) {
-            if (array[i - 1] > array[i]) {
-                System.err.println("出错: " + Arrays.toString(array));
-                System.exit(-1);
-            }
-        }
     }
 
 
