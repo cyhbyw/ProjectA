@@ -1,5 +1,6 @@
 package com.cyh.sorting.heap.sort;
 
+import java.util.Arrays;
 import java.util.Random;
 
 import org.junit.Test;
@@ -17,10 +18,21 @@ public class HeapSortTest {
     @Test
     public void test01() {
         // 第0个元素是个占位符，不参与真正计算
+        int[] array = {Integer.MIN_VALUE, 6, 7, 2, 9, 8, 4};
+        heapSort.buildHeap(array);
+        heapSort.heapSort(array);
+        SortUtils.checkResult(array);
+        System.out.println(Arrays.toString(array));
+    }
+
+    @Test
+    public void test02() {
+        // 第0个元素是个占位符，不参与真正计算
         int[] array = {Integer.MIN_VALUE, 6, 7, 2, 9, 8, 4, 3, 1, 0};
         heapSort.buildHeap(array);
         heapSort.heapSort(array);
         SortUtils.checkResult(array);
+        System.out.println(Arrays.toString(array));
     }
 
     @Test
@@ -36,6 +48,9 @@ public class HeapSortTest {
             heapSort.buildHeap(array);
             heapSort.heapSort(array);
             SortUtils.checkResult(array);
+            if (testCase % 10000 == 0) {
+                System.out.println(Arrays.toString(array));
+            }
         }
     }
 
