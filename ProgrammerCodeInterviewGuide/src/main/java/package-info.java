@@ -2,6 +2,8 @@
  *
  * Created by CYH, 2019-07-26 08:18:33
  *
+ * 问题难度级别：士 尉 校 将
+ *
  */
 
 
@@ -48,22 +50,35 @@
  *    环形单链表的约瑟夫问题
  * {@link chapter_2_listproblem.Problem_07_IsPalindromeList}
  *    判断一个链表是否为回文结构
- *    方法三中没有使用辅助空间，只用几个变量变能实现且能够还原原来的链表，可以看看 # TODO
- * {@link chapter_2_listproblem.Problem_01_PrintCommonPart}
- * {@link chapter_2_listproblem.Problem_01_PrintCommonPart}
- * {@link chapter_2_listproblem.Problem_01_PrintCommonPart}
- * {@link chapter_2_listproblem.Problem_01_PrintCommonPart}
- * {@link chapter_2_listproblem.Problem_01_PrintCommonPart}
- * {@link chapter_2_listproblem.Problem_01_PrintCommonPart}
- * {@link chapter_2_listproblem.Problem_01_PrintCommonPart}
- * {@link chapter_2_listproblem.Problem_01_PrintCommonPart}
- * {@link chapter_2_listproblem.Problem_01_PrintCommonPart}
- * {@link chapter_2_listproblem.Problem_01_PrintCommonPart}
- * {@link chapter_2_listproblem.Problem_01_PrintCommonPart}
- * {@link chapter_2_listproblem.Problem_01_PrintCommonPart}
- * {@link chapter_2_listproblem.Problem_01_PrintCommonPart}
- * {@link chapter_2_listproblem.Problem_01_PrintCommonPart}
- * {@link chapter_2_listproblem.Problem_01_PrintCommonPart}
- * {@link chapter_2_listproblem.Problem_01_PrintCommonPart}
- * {@link chapter_2_listproblem.Problem_01_PrintCommonPart}
+ *    方法三中没有使用辅助空间，只用几个变量就能实现且能够还原原来的链表，可以看看 # TODO
+ * {@link chapter_2_listproblem.Problem_08_SmallerEqualBigger}
+ *    将单向链表按某值划分成左边小、中间相等、右边大的形式
+ *    进阶：时间复杂度O(N)、空间复杂度O(1)，也是利用几个变量来实现 # TODO
+ * {@link chapter_2_listproblem.Problem_09_CopyListWithRandom}
+ *    复制含有随机指针节点的链表
+ * {@link chapter_2_listproblem.Problem_10_AddTwoLinkedLists}
+ *    两个单链表生成相加链表
+ * {@link chapter_2_listproblem.Problem_11_FindFirstIntersectNode}
+ *    两个单链表相交的一系列问题
+ *    问题难度：将 # TODO
+ * {@link chapter_2_listproblem.Problem_12_ConvertEveryKNodesInList}
+ *    将单链表的每K个节点之间逆序
+ * {@link chapter_2_listproblem.Problem_13_RemoveRepetition}
+ *    删除无序单链表中值重复出现的节点
+ *    1 2 3 3 4 4 2 1 1 --> 1 2 3 4
+ * {@link chapter_2_listproblem.Problem_14_RemoveGivenValue}
+ *    在单链表中删除指定值的节点
+ * {@link chapter_2_listproblem.Problem_15_BSTtoDoubleLinkedList}
+ *    将二叉搜索树转换为双向链表
+ * {@link chapter_2_listproblem.Problem_16_ListSelectionSort}
+ *    单链表的选择排序
+ * {@link chapter_2_listproblem.Problem_17_RemoveNodeWired}
+ *    一种怪异的节点删除方式
+ *    就是删除一个指定值的节点，需要考虑各种场景
+ * {@link chapter_2_listproblem.Problem_18_InsertNumToCircularList}
+ *    向有序的环形单链表中插入新节点
+ * {@link chapter_2_listproblem.Problem_19_MergeTwoLinkedLists}
+ *    合并两个有序的单链表
+ * {@link chapter_2_listproblem.Problem_20_RelocateLinkedList}
+ *    按照左右半区的方式重新组合单链表
  *******************************************************************************/
