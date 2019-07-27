@@ -82,3 +82,44 @@
  * {@link chapter_2_listproblem.Problem_20_RelocateLinkedList}
  *    按照左右半区的方式重新组合单链表
  *******************************************************************************/
+
+/******************************** 第3章：二叉树问题 *****************************
+ * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
+ *    分别用递归和非递归方式实现二叉树先序、中序和后序遍历
+ *    标注：非递归方式会麻烦一点，后期考虑写一次 #TODO
+ * {@link chapter_3_binarytreeproblem.Problem_02_PrintEdgeNodes}
+ *    打印二叉树的边界节点
+ * {@link chapter_3_binarytreeproblem.Problem_03_PrintBinaryTree}
+ *    如何较为直观地打印二叉树
+ * {@link chapter_3_binarytreeproblem.Problem_04_SerializeAndReconstructTree}
+ *    二叉树的序列化和反序列化
+ * {@link chapter_3_binarytreeproblem.Problem_05_MorrisTraversal}
+ *    遍历二叉树的神级方法
+ *    问题难度：将 # TODO
+ * {@link chapter_3_binarytreeproblem.Problem_06_LongestPathSum}
+ *    在二叉树中找到累加和为指定值的最长路径长度
+ *    与此题关系较大：{@link chapter_8_arrayandmatrix.Problem_11_LongestSumSubArrayLength}
+ * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
+ * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
+ * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
+ * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
+ * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
+ * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
+ * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
+ * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
+ * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
+ * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
+ * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
+ * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
+ * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
+ * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
+ ********************************************************************************/
+
+/******************************** 第3章：二叉树问题 *******************************
+ * {@link chapter_8_arrayandmatrix.Problem_10_LongestSumSubArrayLengthInPositiveArray}
+ *    未排序正整数数组中累加和为给定值的最长子数组长度
+ * {@link chapter_8_arrayandmatrix.Problem_11_LongestSumSubArrayLength}
+ *    未排序数组中累加和为给定值的最长子数组系列问题
+ * {@link chapter_8_arrayandmatrix.Problem_12_LongestLessSumSubArrayLength}
+ *    未排序数组中累加和小于等于给定值的最长子数组长度
+ ********************************************************************************/
