@@ -99,20 +99,46 @@
  * {@link chapter_3_binarytreeproblem.Problem_06_LongestPathSum}
  *    在二叉树中找到累加和为指定值的最长路径长度
  *    与此题关系较大：{@link chapter_8_arrayandmatrix.Problem_11_LongestSumSubArrayLength}
- * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
- * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
- * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
- * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
- * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
- * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
- * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
- * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
- * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
- * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
- * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
- * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
- * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
- * {@link chapter_3_binarytreeproblem.Problem_01_PreInPosTraversal}
+ * {@link chapter_3_binarytreeproblem.Problem_07_BiggestSubBSTInTree}
+ *    找到二叉树中的最大搜索二叉子树
+ *    树形DP问题 # TODO
+ * {@link chapter_3_binarytreeproblem.Problem_08_BiggestBSTTopologyInTree}
+ *    找到二叉树中符合搜索二叉树条件的最大拓扑结构
+ *    问题难度：校
+ * {@link chapter_3_binarytreeproblem.Problem_09_PrintBinaryTreeByLevelAndZigZag}
+ *    二叉树的按层打印与ZigZag打印
+ * {@link chapter_3_binarytreeproblem.Problem_10_RecoverBST}
+ *    调整搜索二叉树中两个错误的节点
+ * {@link chapter_3_binarytreeproblem.Problem_11_T1ContainsT2Topology}
+ *    判断T1树是否包含T2树全部的拓扑结构
+ * {@link chapter_3_binarytreeproblem.Problem_12_T1SubtreeEqualsT2}
+ *    判断T1树中是否有与T2树拓扑结构完全相同的子树
+ * {@link chapter_3_binarytreeproblem.Problem_13_IsBalancedTree}
+ *    判断二叉树是否为平衡二叉树
+ * {@link chapter_3_binarytreeproblem.Problem_14_PosArrayToBST}
+ *    根据后序数组重建搜索二叉树
+ * {@link chapter_3_binarytreeproblem.Problem_15_IsBSTAndCBT}
+ *    判断一棵二叉树是否为搜索二叉树和完全二叉树
+ * {@link chapter_3_binarytreeproblem.Problem_16_SortedArrayToBalancedBST}
+ *    通过有序数组生成平衡搜索二叉树
+ * {@link chapter_3_binarytreeproblem.Problem_17_DescendantNode}
+ *    在二叉树中找到一个节点的后继节点
+ * {@link chapter_3_binarytreeproblem.Problem_18_LowestCommonAncestor}
+ *    在二叉树中找到两个节点的最近公共祖先
+ * {@link chapter_3_binarytreeproblem.Problem_19_TarjanAndDisjointSetsForLCA}
+ *    Tarjan算法与并查集解决二叉树节点间最近公共祖先的批量查询问题
+ * {@link chapter_3_binarytreeproblem.Problem_20_MaxDistanceInTree}
+ *    二叉树节点之间的最大距离问题
+ *    也可以套用树形DP来解决
+ * {@link chapter_3_binarytreeproblem.Problem_21_MaxHappy}
+ *    派对的最大快乐值
+ *    也算是树形DP吧
+ * {@link chapter_3_binarytreeproblem.Problem_22_PreAndInArrayToPosArray}
+ *    通过先序和中序数组生成后序数组
+ * {@link chapter_3_binarytreeproblem.Problem_23_UniqueBST}
+ *    统计和生成所有不同的二叉树
+ * {@link chapter_3_binarytreeproblem.Problem_24_CompleteTreeNodeNumber}
+ *    统计完全二叉树的节点数
  ********************************************************************************/
 
 /******************************** 第3章：二叉树问题 *******************************
