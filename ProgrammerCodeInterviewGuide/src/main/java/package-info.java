@@ -141,6 +141,51 @@
  *    统计完全二叉树的节点数
  ********************************************************************************/
 
+/******************************** 第4章：递归和动态规划 *******************************
+ * {@link chapter_4_recursionanddp.Problem_01_FibonacciProblem}
+ *    斐波那契数列问题的递归和动态规划
+ * {@link chapter_4_recursionanddp.Problem_02_MinPathSum}
+ *    矩阵的最小路径和
+ * {@link chapter_4_recursionanddp.Problem_03_CoinsMin}
+ *    换钱的最少货币数
+ * {@link chapter_4_recursionanddp.Problem_04_RobotWalk}
+ *    机器人到达指定位置的方案数
+ * {@link chapter_4_recursionanddp.Problem_05_CoinsWay}
+ *    换钱的方法数
+ * {@link chapter_4_recursionanddp.Problem_06_BurstBalloons}
+ *    打气球的最大分数
+ * {@link chapter_4_recursionanddp.Problem_07_LIS}
+ *    最长递增子序列
+ * {@link chapter_4_recursionanddp.Problem_08_EnvelopesProblem}
+ *    信封嵌套问题
+ * {@link chapter_4_recursionanddp.Problem_09_HanoiProblem}
+ *    汉诺塔问题
+ * {@link chapter_4_recursionanddp.Problem_10_LCSubsequence}
+ *    最长公共子序列问题
+ * {@link chapter_4_recursionanddp.Problem_11_LCSubstring}
+ *    最长公共子串问题
+ * {@link chapter_4_recursionanddp.Problem_12_MostEOR}
+ *    子数组异或和为0的最多划分
+ * {@link chapter_4_recursionanddp.Problem_13_EditCost}
+ *    最小编辑代价
+ * {@link chapter_4_recursionanddp.Problem_14_StringCross}
+ *    字符串的交错组成
+ * {@link chapter_4_recursionanddp.Problem_15_DungeonGame}
+ *    龙与地下城游戏问题（骑士与公主问题）
+ * {@link chapter_4_recursionanddp.Problem_16_NumberToLetter}
+ *    数字字符串转换为字母组合的种数
+ * {@link chapter_4_recursionanddp.Problem_17_ExpressionNumber}
+ *    表达式得到期望结果的组成种数
+ * {@link chapter_4_recursionanddp.Problem_18_CardsInLine}
+ *    排成一条线的纸牌博弈问题
+ * {@link chapter_4_recursionanddp.Problem_19_JumpGame}
+ *    跳跃游戏
+ * {@link chapter_4_recursionanddp.Problem_20_LongestConsecutive}
+ *    数组中的最长连续序列
+ * {@link chapter_4_recursionanddp.Problem_21_NQueens}
+ *    N皇后问题
+ *******************************************************************************/
+
 /******************************** 第3章：二叉树问题 *******************************
  * {@link chapter_8_arrayandmatrix.Problem_10_LongestSumSubArrayLengthInPositiveArray}
  *    未排序正整数数组中累加和为给定值的最长子数组长度
