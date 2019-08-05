@@ -186,6 +186,68 @@
  *    N皇后问题
  *******************************************************************************/
 
+/******************************** 第5章：字符串问题 *******************************
+ * {@link chapter_5_stringproblem.Problem_01_IsDeformation}
+ *    判断两个字符串是否互为变形词
+ * {@link chapter_5_stringproblem.Problem_02_IsRotation}
+ *    判断两个字符串是否互为旋转词
+ * {@link chapter_5_stringproblem.Problem_03_ConvertStringToInteger}
+ *    将整数字符串转成整形值
+ * {@link chapter_5_stringproblem.Problem_04_ConvertStringToCount}
+ *    字符串的统计字符串
+ * {@link chapter_5_stringproblem.Problem_05_IsAllUnique}
+ *    判断字符数组中是否所有的字符都只出现过一次
+ *    要求1：时间复杂度为O(N)
+ *    要求2：额外空间为O(1) #TODO
+ * {@link chapter_5_stringproblem.Problem_06_FindStringInContainsNullArray}
+ *    在有序但含有null的数组中查找字符串
+ * {@link chapter_5_stringproblem.Problem_07_ModifyAndReplace}
+ *    字符串的调整与替换
+ * {@link chapter_5_stringproblem.Problem_08_RotateString}
+ *    翻转字符串
+ * {@link chapter_5_stringproblem.Problem_09_ShuffleProblem}
+ *    完美洗牌问题
+ *    问题难度：将 #TODO
+ * {@link chapter_5_stringproblem.Problem_10_RemoveDuplicateLettersLessLexi}
+ *    删除多余字符得到字典序最小的字符串
+ * {@link chapter_5_stringproblem.Problem_11_MinDistance}
+ *    数组中两个字符串的最小距离
+ * {@link chapter_5_stringproblem.Problem_12_WordMinPaths}
+ *    字符串的转换路径问题
+ *    经典题目，有意思，回头来写一写 #TODO
+ * {@link chapter_5_stringproblem.Problem_13_PalindromeString}
+ *    添加最少字符使得字符串整体都是回文字符串
+ *    DP问题，难度：校
+ * {@link chapter_5_stringproblem.Problem_14_ParenthesesProblem}
+ *    括号字符串的有效性和最长有效长度
+ * {@link chapter_5_stringproblem.Problem_15_ExpressionCompute}
+ *    公式字符串求值
+ *    经典问题，要写 #TODO
+ * {@link chapter_5_stringproblem.Problem_16_ZeroLeftOneStringNumber}
+ *    0左边必有1的二进制字符串数量
+ * {@link chapter_5_stringproblem.Problem_17_LowestLexicography}
+ *    拼接所有字符串产生字典顺序最小的大写字符串
+ * {@link chapter_5_stringproblem.Problem_18_LongestNoRepeatSubstring}
+ *    找到字符串的最长无重复子字符串
+ * {@link chapter_5_stringproblem.Problem_19_FindNewTypeChar}
+ *    找到指定的新类型字符
+ * {@link chapter_5_stringproblem.Problem_20_ScrambleString}
+ *    旋变字符串问题
+ *    问题难度：将
+ * {@link chapter_5_stringproblem.Problem_21_MinWindowLength}
+ *    最小包含子串的长度
+ *    可以写一下 #TODO
+ * {@link chapter_5_stringproblem.Problem_22_PalindromeMinCut}
+ *    回文最少分隔数
+ * {@link chapter_5_stringproblem.Problem_23_RegularExpressionMatch}
+ *    字符串匹配问题
+ *    正则表达式匹配问题，一定要写 #TODO
+ * {@link chapter_5_stringproblem.Problem_24_TrieTree}
+ *    字典树的实现
+ * {@link chapter_5_stringproblem.Problem_25_MaxEOR}
+ *    子数组的最大异或和
+ ********************************************************************************/
+
 /******************************** 第3章：二叉树问题 *******************************
  * {@link chapter_8_arrayandmatrix.Problem_10_LongestSumSubArrayLengthInPositiveArray}
  *    未排序正整数数组中累加和为给定值的最长子数组长度
