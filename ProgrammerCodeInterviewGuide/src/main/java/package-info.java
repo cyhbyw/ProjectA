@@ -260,6 +260,21 @@
  *    病毒感染问题（简单来说就是搜索问题），也算是经典问题了 #TODO
  ********************************************************************************/
 
+/******************************** 第7章：位运算 *******************************
+ * {@link chapter_7_bitoperation.Problem_01_SwapWithoutTmp}
+ *    不用额外变量交换两个整数的值
+ * {@link chapter_7_bitoperation.Problem_02_GetMax}
+ *    不用做比较判断两个数中较大的数
+ * {@link chapter_7_bitoperation.Problem_03_AddMinusMultiDivideByBit}
+ *    只用位运算不用算术运算实现整数的加减乘除运算
+ * {@link chapter_7_bitoperation.Problem_04_NumberOf1}
+ *    整数的二进制表示中有多少个1
+ * {@link chapter_7_bitoperation.Problem_05_EvenTimesOddTimes}
+ *    在其他数都出现偶数次的数组中找到出现奇数次的数
+ * {@link chapter_7_bitoperation.Problem_06_KTimesOneTime}
+ *    在其他数都出现K次的数组中找到只出现一次的数
+ */
+
 /******************************** 第3章：二叉树问题 *******************************
  * {@link chapter_8_arrayandmatrix.Problem_10_LongestSumSubArrayLengthInPositiveArray}
  *    未排序正整数数组中累加和为给定值的最长子数组长度
