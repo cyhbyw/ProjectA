@@ -21,8 +21,11 @@ public class SingleListTestBase {
     protected void printNode(Node head) {
         Node p = head;
         while (Objects.nonNull(p)) {
-            System.out.print(p.value + " -> ");
+            System.out.print(p.value);
             p = p.next;
+            if (Objects.nonNull(p)) {
+                System.out.print(" -> ");
+            }
         }
         System.out.println();
     }
