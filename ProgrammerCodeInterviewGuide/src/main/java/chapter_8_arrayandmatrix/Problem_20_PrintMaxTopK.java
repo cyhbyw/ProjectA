@@ -5,9 +5,9 @@ import java.util.Arrays;
 public class Problem_20_PrintMaxTopK {
 
     public static class HeapNode {
-        public int value; // ֵ��ʲô
-        public int arrNum; // �����ĸ�����
-        public int index; // ����������ĸ�λ��
+        public int value;
+        public int arrNum;
+        public int index;
 
         public HeapNode(int value, int arrNum, int index) {
             this.value = value;

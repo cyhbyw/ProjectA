@@ -19,9 +19,8 @@ public class Problem_26_MaxGap {
         boolean[] hasNum = new boolean[len + 1];
         int[] maxs = new int[len + 1];
         int[] mins = new int[len + 1];
-        int bid = 0;
         for (int i = 0; i < len; i++) {
-            bid = bucket(nums[i], len, min, max);
+            int bid = bucket(nums[i], len, min, max);
             mins[bid] = hasNum[bid] ? Math.min(mins[bid], nums[i]) : nums[i];
             maxs[bid] = hasNum[bid] ? Math.max(maxs[bid], nums[i]) : nums[i];
             hasNum[bid] = true;

@@ -13,11 +13,11 @@ public class Problem_01_PrintMatrixSpiralOrder {
     }
 
     public static void printEdge(int[][] m, int tR, int tC, int dR, int dC) {
-        if (tR == dR) { // �Ӿ���ֻ��һ��ʱ
+        if (tR == dR) {
             for (int i = tC; i <= dC; i++) {
                 System.out.print(m[tR][i] + " ");
             }
-        } else if (tC == dC) { // �Ӿ���ֻ��һ��ʱ
+        } else if (tC == dC) {
             for (int i = tR; i <= dR; i++) {
                 System.out.print(m[i][tC] + " ");
             }

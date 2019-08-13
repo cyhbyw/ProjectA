@@ -275,11 +275,76 @@
  *    在其他数都出现K次的数组中找到只出现一次的数
  */
 
-/******************************** 第3章：二叉树问题 *******************************
+/******************************** 第8章：数组和矩阵问题 *******************************
+ * {@link chapter_8_arrayandmatrix.Problem_01_PrintMatrixSpiralOrder}
+ *    转圈打印矩阵
+ * {@link chapter_8_arrayandmatrix.Problem_02_RotateMatrix}
+ *    将正方形矩阵顺时针转动90度
+ * {@link chapter_8_arrayandmatrix.Problem_03_ZigZagPrintMatrix}
+ *    之字形打印矩阵
+ * {@link chapter_8_arrayandmatrix.Problem_04_FindMinKNums}
+ *    找到无序数组中最小的K个数
+ * {@link chapter_8_arrayandmatrix.Problem_05_MinLengthForSort}
+ *    需要排序的最短子数组长度
+ * {@link chapter_8_arrayandmatrix.Problem_06_FindKMajority}
+ *    在数组中找到出现次数大于N/K的数
+ * {@link chapter_8_arrayandmatrix.Problem_07_FindNumInSortedMatrix}
+ *    在行列都排好序的矩阵中查找指定数
+ * {@link chapter_8_arrayandmatrix.Problem_08_LongestIntegratedLength}
+ *    最长的可整合子数组的长度
+ * {@link chapter_8_arrayandmatrix.Problem_09_PrintUniquePairAndTriad}
+ *    不重复打印排序数组中相加和为给定值的所有二元组和三元组
  * {@link chapter_8_arrayandmatrix.Problem_10_LongestSumSubArrayLengthInPositiveArray}
  *    未排序正整数数组中累加和为给定值的最长子数组长度
  * {@link chapter_8_arrayandmatrix.Problem_11_LongestSumSubArrayLength}
  *    未排序数组中累加和为给定值的最长子数组系列问题
  * {@link chapter_8_arrayandmatrix.Problem_12_LongestLessSumSubArrayLength}
  *    未排序数组中累加和小于等于给定值的最长子数组长度
+ *    问题难度：将
+ * {@link chapter_8_arrayandmatrix.Problem_13_SmallSum}
+ *    计算数组的小和
+ *    归并排序的思想，好问题 #TODO
+ * {@link chapter_8_arrayandmatrix.Problem_14_SortNaturalNumberArray}
+ *    自然数数组的排序
+ * {@link chapter_8_arrayandmatrix.Problem_15_EvenInEvenOddInOdd}
+ *    奇数下标都是奇数或者偶数下标都是偶数
+ * {@link chapter_8_arrayandmatrix.Problem_16_SubArrayMaxSum}
+ *    子数组的最大累加和问题
+ * {@link chapter_8_arrayandmatrix.Problem_17_SubMatrixMaxSum}
+ *    子矩阵的最大累加和问题
+ * {@link chapter_8_arrayandmatrix.Problem_18_FindOneLessValueIndex}
+ *    在数组中找到一个局部最小的位置
+ *    神奇的二分 #TODO
+ * {@link chapter_8_arrayandmatrix.Problem_19_SubArrayMaxProduct}
+ *    数组中子数组的最大累乘积
+ * {@link chapter_8_arrayandmatrix.Problem_20_PrintMaxTopK}
+ *    打印N个数组整体最大的TopK
+ * {@link chapter_8_arrayandmatrix.Problem_21_MaxOneBorderSize}
+ *    边界都是1的最大正方形大小
+ * {@link chapter_8_arrayandmatrix.Problem_22_MultiplyExceptOwn}
+ *    不包含本位置值的累乘数组
+ * {@link chapter_8_arrayandmatrix.Problem_23_PartitionArray}
+ *    数组的Partition调整
+ * {@link chapter_8_arrayandmatrix.Problem_24_MinPathValue}
+ *    求最短通路值
+ * {@link chapter_8_arrayandmatrix.Problem_25_SmallestMissNum}
+ *    数组中未出现的最小正整数
+ * {@link chapter_8_arrayandmatrix.Problem_26_MaxGap}
+ *    数组排序之后相邻数的最大差值
+ *    桶排序算法思想的应用，有意思 #TODO
+ * {@link chapter_8_arrayandmatrix.Problem_27_GetMaxMoney}
+ *    做项目的最大收益问题
+ * {@link chapter_8_arrayandmatrix.Problem_28_SplitGold}
+ *    分金条的最小花费
+ * {@link chapter_8_arrayandmatrix.Problem_29_BuildingOutline}
+ *    大楼轮廓问题
+ *    问题难度：将
+ * {@link chapter_8_arrayandmatrix.Problem_30_GasStations}
+ *    加油站良好出发点问题
+ *    问题难度：校
+ *    感觉题目比较有意思，可以多想想 #TODO
+ * {@link chapter_8_arrayandmatrix.Problem_31_WaterProblem}
+ *    容器盛水问题
+ *    问题难度：校
+ *    感觉题目比较有意思，可以多想想 #TODO
  ********************************************************************************/
