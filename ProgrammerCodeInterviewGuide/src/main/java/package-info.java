@@ -348,3 +348,76 @@
  *    问题难度：校
  *    感觉题目比较有意思，可以多想想 #TODO
  ********************************************************************************/
+
+/******************************** 第九章：其它题目 ************************************
+ * {@link chapter_9_others.Problem_01_Rand5ToRand7}
+ *    从5随机到7随机及其扩展
+ * {@link chapter_9_others.Problem_02_GCD}
+ *    一行代码求最大公约数
+ * {@link chapter_9_others.Problem_03_FactorialProblem}
+ *    有关阶乘的两个问题
+ * {@link chapter_9_others.Problem_04_PointInRectangle}
+ *    判断一个点是否在矩阵内部
+ * {@link chapter_9_others.Problem_05_PointInTriangle}
+ *    判断一个点是否在三角形内部
+ * {@link chapter_9_others.Problem_06_PaperFolding}
+ *    折纸问题
+ * {@link chapter_9_others.Problem_07_PerfectRectangle}
+ *    能否完美拼成矩形
+ * {@link chapter_9_others.Problem_08_ReservoirSampling}
+ *    蓄水池算法
+ * {@link chapter_9_others.Problem_09_SetAllHashMap}
+ *    设计有setAll功能的哈希表
+ * {@link chapter_9_others.Problem_10_MaxABSBetweenLeftAndRight}
+ *    最大的LeftMax与RightMax之差的绝对值
+ *    问题难度：校
+ *    感觉题目比较有意思，可以多想想 #TODO
+ * {@link chapter_9_others.Problem_11_LRU}
+ *    设计LRU缓存结构
+ *    要看看　#TODO
+ *    要看看　#TODO
+ *    要看看　#TODO
+ * {@link chapter_9_others.Problem_12_LFU}
+ *    设计LFU缓存结构
+ *    问题难度：校
+ *    要看看　#TODO
+ *    要看看　#TODO
+ *    要看看　#TODO
+ * {@link chapter_9_others.Problem_13_RandomPool}
+ *    设计RandomPool结构
+ * {@link chapter_9_others.Problem_14_UnionFind}
+ *    并查集的实现
+ * {@link chapter_9_others.Problem_15_ProbabilityXPowerK}
+ *    调整[0,x)区间上的数出现的概率
+ * {@link chapter_9_others.Problem_16_PathsToNums}
+ *    路径数组变为统计数组
+ *    问题难度：校
+ * {@link chapter_9_others.Problem_17_SmallestUnFormedSum}
+ *    正数数组的最小不可组成和
+ * {@link chapter_9_others.Problem_18_MinNeeds}
+ *    累加出整个范围所有的数最少还需要几个数
+ * {@link chapter_9_others.Problem_19_NumberAndString}
+ *    一种字符串和数字的对应关系
+ * {@link chapter_9_others.Problem_20_OneNumber}
+ *    1到N中1出现的次数
+ * {@link chapter_9_others.Problem_01_Rand5ToRand7}
+ * {@link chapter_9_others.Problem_01_Rand5ToRand7}
+ * {@link chapter_9_others.Problem_01_Rand5ToRand7}
+ * {@link chapter_9_others.Problem_01_Rand5ToRand7}
+ * {@link chapter_9_others.Problem_01_Rand5ToRand7}
+ * {@link chapter_9_others.Problem_01_Rand5ToRand7}
+ * {@link chapter_9_others.Problem_01_Rand5ToRand7}
+ * {@link chapter_9_others.Problem_01_Rand5ToRand7}
+ * {@link chapter_9_others.Problem_01_Rand5ToRand7}
+ * {@link chapter_9_others.Problem_01_Rand5ToRand7}
+ * {@link chapter_9_others.Problem_01_Rand5ToRand7}
+ * {@link chapter_9_others.Problem_01_Rand5ToRand7}
+ * {@link chapter_9_others.Problem_01_Rand5ToRand7}
+ * {@link chapter_9_others.Problem_01_Rand5ToRand7}
+ * {@link chapter_9_others.Problem_01_Rand5ToRand7}
+ * {@link chapter_9_others.Problem_01_Rand5ToRand7}
+ * {@link chapter_9_others.Problem_01_Rand5ToRand7}
+ * {@link chapter_9_others.Problem_01_Rand5ToRand7}
+ * {@link chapter_9_others.Problem_01_Rand5ToRand7}
+ * {@link chapter_9_others.Problem_01_Rand5ToRand7}
+ */

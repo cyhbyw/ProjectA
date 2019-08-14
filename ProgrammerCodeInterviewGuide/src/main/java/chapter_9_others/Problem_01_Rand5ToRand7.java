@@ -50,7 +50,6 @@ public class Problem_01_Rand5ToRand7 {
         return getNumFromMSysNum(randNum, m) + 1;
     }
 
-    // ��valueת��m���Ƶ���
     public static int[] getMSysNum(int value, int m) {
         int[] res = new int[32];
         int index = res.length - 1;
@@ -61,7 +60,6 @@ public class Problem_01_Rand5ToRand7 {
         return res;
     }
 
-    // �ȸ����������һ��0~nMsys��Χ�ϵ�����ֻ������m���Ʊ��ġ�
     public static int[] getRanMSysNumLessN(int[] nMSys, int m) {
         int[] res = new int[nMSys.length];
         int start = 0;
@@ -86,7 +84,6 @@ public class Problem_01_Rand5ToRand7 {
         return res;
     }
 
-    // ��m���Ƶ���ת��10����
     public static int getNumFromMSysNum(int[] mSysNum, int m) {
         int res = 0;
         for (int i = 0; i != mSysNum.length; i++) {

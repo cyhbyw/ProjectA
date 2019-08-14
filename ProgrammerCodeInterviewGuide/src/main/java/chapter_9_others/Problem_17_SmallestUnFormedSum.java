@@ -10,7 +10,7 @@ public class Problem_17_SmallestUnFormedSum {
             return 1;
         }
         HashSet<Integer> set = new HashSet<Integer>();
-        process(arr, 0, 0, set); // �ռ������Ӽ��ĺ�
+        process(arr, 0, 0, set);
         int min = Integer.MAX_VALUE;
         for (int i = 0; i != arr.length; i++) {
             min = Math.min(min, arr[i]);
@@ -28,8 +28,8 @@ public class Problem_17_SmallestUnFormedSum {
             set.add(sum);
             return;
         }
-        process(arr, i + 1, sum, set); // ������ǰ��arr[i]�����
-        process(arr, i + 1, sum + arr[i], set); // ��������ǰ��arr[i]�����
+        process(arr, i + 1, sum, set);
+        process(arr, i + 1, sum + arr[i], set);
     }
 
     public static int unformedSum2(int[] arr) {
@@ -62,7 +62,7 @@ public class Problem_17_SmallestUnFormedSum {
         if (arr == null || arr.length == 0) {
             return 0;
         }
-        Arrays.sort(arr); // ��arr����
+        Arrays.sort(arr);
         int range = 0;
         for (int i = 0; i != arr.length; i++) {
             if (arr[i] > range + 1) {
