@@ -17,4 +17,22 @@ public class ReverseSingleLinkedListFromFrontTest extends SingleListTestBase {
         printNode(newHead);
     }
 
+    @Test
+    public void test02() {
+        Node head = prepareData(1, 8);
+        printNode(head);
+        int k = 2;
+        Node newHead = ReverseSingleLinkedListFromFront.packageReverse(head, k);
+        printNode(newHead);
+    }
+
+    @Test
+    public void test03() {
+        Node head = prepareData(1, 8);
+        printNode(head);
+        int k = 4;
+        Node newHead = ReverseSingleLinkedListFromFront.packageReverse(head, k);
+        printNode(newHead);
+    }
+
 }

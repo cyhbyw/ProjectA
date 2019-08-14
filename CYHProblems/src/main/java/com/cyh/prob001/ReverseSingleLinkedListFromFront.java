@@ -19,30 +19,61 @@ public class ReverseSingleLinkedListFromFront {
         Node p = head;
         Node starting = head;
         Node tailing = null;
+        Node newHead = null;
         int count = 0;
         while (Objects.nonNull(p)) {
             ++count;
             if (count == 1) {
                 starting = p;
             }
+            Node next = p.next;
             if (count == k) {
                 count = 0;
-                doReverse(starting, p, tailing);
-                tailing = p;
+                ReturnPair returnPair = doReverse(starting, p, tailing);
+                tailing = returnPair.tail;
+                if (Objects.isNull(newHead)) {
+                    newHead = returnPair.head;
+                }
             }
-            p = p.next;
+            p = next;
         }
-        return null;
+        if (count > 0) {
+            tailing.next = starting;
+        }
+
+        return newHead;
     }
 
-    private static void doReverse(Node starting, Node p, Node tailing) {
-        for (Node it = starting;; it = it.next) {
-            System.out.print(it.value + " ");
-            if (it == p) {
+    private static ReturnPair doReverse(Node starting, Node end, Node tailing) {
+        Node p = starting;
+        Node previous = null;
+        Node newTailing = null;
+        while (true) {
+            Node next = p.next;
+            p.next = previous;
+            if (Objects.isNull(previous)) {
+                newTailing = p;
+            }
+            if (p == end) {
+                if (Objects.nonNull(tailing)) {
+                    tailing.next = p;
+                }
                 break;
             }
+            previous = p;
+            p = next;
         }
-        System.out.println();
+        return new ReturnPair(p, newTailing);
+    }
+
+    static class ReturnPair {
+        Node head;
+        Node tail;
+
+        public ReturnPair(Node head, Node tail) {
+            this.head = head;
+            this.tail = tail;
+        }
     }
 
 }
