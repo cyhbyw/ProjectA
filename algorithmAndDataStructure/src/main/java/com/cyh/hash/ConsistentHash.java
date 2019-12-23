@@ -15,6 +15,8 @@ import java.util.concurrent.ConcurrentMap;
 
 /**
  * 从 Dubbo 源码 org.apache.dubbo.rpc.cluster.loadbalance.ConsistentHashLoadBalance 中取出来的
+ *
+ * 其实是 Ketama Hash 算法
  */
 public class ConsistentHash {
 
