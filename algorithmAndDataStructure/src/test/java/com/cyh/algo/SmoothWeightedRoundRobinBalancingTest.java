@@ -1,17 +1,23 @@
 package com.cyh.algo;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.List;
-
-import org.junit.Test;
 
 public class SmoothWeightedRoundRobinBalancingTest {
 
     @Test
     public void selectNext() {
         final List<Integer> data = Arrays.asList(1, 6, 9);
-        for (int x = 0; x < 16; x++) {
-            System.out.println(SmoothWeightedRoundRobinBalancing.selectNext(data));
-        }
+        List<Character> ans = SmoothWeightedRoundRobinBalancing.selectNext(data);
+        System.out.println(ans);
+    }
+
+    @Test
+    public void selectNext2() {
+        final List<Integer> data = Arrays.asList(5, 1, 1);
+        List<Character> ans = SmoothWeightedRoundRobinBalancing.selectNext(data);
+        System.out.println(ans);
     }
 }
