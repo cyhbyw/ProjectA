@@ -10,7 +10,7 @@ import java.util.Random;
  */
 public class SkipList {
 
-    private static final int MAX_LEVEL = 16;
+    private static final int MAX_LEVEL = 8;
     private int levelCount = 1;
     /** 带头链表 */
     private Node head = new Node();
@@ -89,12 +89,14 @@ public class SkipList {
     }
 
     public void printAll() {
-        Node p = head;
-        while (p.forwards[0] != null) {
-            System.out.print(p.forwards[0] + " ");
-            p = p.forwards[0];
+        System.out.println("\n==================================================");
+        for (int i = levelCount - 1; i >= 0; i--) {
+            System.out.printf("Level: %02d: ", i);
+            for (Node x = head.forwards[i]; x != null; x = x.forwards[i]) {
+                System.out.printf("%3d", x.data);
+            }
+            System.out.println();
         }
-        System.out.println();
     }
 
     public class Node {

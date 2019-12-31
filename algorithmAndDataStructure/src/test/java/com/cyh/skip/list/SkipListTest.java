@@ -16,31 +16,43 @@ public class SkipListTest {
     public void test_insertAndFind() {
         SkipList skipList = new SkipList();
         skipList.insert(1);
+        skipList.printAll();
         System.out.println(skipList.find(1));
 
         skipList.insert(4);
+        skipList.printAll();
         System.out.println(skipList.find(1));
         System.out.println(skipList.find(4));
 
         skipList.insert(3);
+        skipList.printAll();
         System.out.println(skipList.find(1));
         System.out.println(skipList.find(3));
         System.out.println(skipList.find(4));
 
         skipList.insert(7);
+        skipList.printAll();
         System.out.println(skipList.find(7));
 
         skipList.insert(5);
+        skipList.printAll();
         System.out.println(skipList.find(3));
         System.out.println(skipList.find(5));
         System.out.println(skipList.find(7));
 
         skipList.insert(8);
+        skipList.printAll();
         skipList.insert(9);
+        skipList.printAll();
         skipList.insert(10);
+        skipList.printAll();
         skipList.insert(13);
+        skipList.printAll();
         skipList.insert(16);
+        skipList.printAll();
         skipList.insert(17);
+        skipList.printAll();
         skipList.insert(18);
+        skipList.printAll();
     }
 }
