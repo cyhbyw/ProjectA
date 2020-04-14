@@ -5,6 +5,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
 /**
  * 2019年累计扣税计算
  * @author CYH
@@ -48,14 +51,25 @@ public class PersonalYearlyTaxCalculation {
         throw new RuntimeException("too large value: " + x);
     }
 
+    @Data
+    @AllArgsConstructor
+    private static class SalaryData {
+        /** 总月薪 */
+        double totalMonthSalary;
+        /** 公积金 */
+        double accumulationFund;
+        /** 社保 */
+        double socialSecurity;
+        /** 专项扣除 */
+        double specialDeduction;
+        /** 实际缴纳的公积金与免税公积金的差值 */
+        double toMinusFundGap;
+    }
+
+    @AllArgsConstructor
     private static class Pair {
         double rate;
         double minus;
-
-        public Pair(double rate, double minus) {
-            this.rate = rate;
-            this.minus = minus;
-        }
     }
 
 }
