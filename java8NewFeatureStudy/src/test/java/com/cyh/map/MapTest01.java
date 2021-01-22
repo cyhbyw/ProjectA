@@ -4,9 +4,14 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import com.cyh.pojo.Bill;
+import com.google.common.collect.Lists;
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-
+import java.util.stream.Collectors;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -51,5 +56,22 @@ public class MapTest01 {
         assertEquals(map.get(9), "val9");
         map.merge(9, "concat", (value, newValue) -> value.concat(newValue));
         assertEquals(map.get(9), "val9concat");
+    }
+
+    @Test
+    public void test02() {
+        Bill in2 = new Bill("in", new BigDecimal("2"));
+        Bill out2 = new Bill("out", new BigDecimal("2"));
+        Bill in3 = new Bill("in", new BigDecimal("3"));
+        Bill out4 = new Bill("out", new BigDecimal("4"));
+        ArrayList<Bill> bills = Lists.newArrayList(in2, out2, in3, out4);
+        // 直接这样 groupingBy 返回的是 List<Bill>
+        Map<String, List<Bill>> mapByType = bills.stream().collect(Collectors.groupingBy(a -> a.getType()));
+
+        // groupingBy 分组后，再对组内的 List<Bill> 进行计算
+        Map<String, BigDecimal> groupMap = bills.stream().collect(
+            Collectors.groupingBy(a -> a.getType(),
+                Collectors.reducing(BigDecimal.ZERO, Bill::getAmount, (x, y) -> x.add(y))));
+        groupMap.forEach((k, v) -> System.out.println(k + "  " + v));
     }
 }
