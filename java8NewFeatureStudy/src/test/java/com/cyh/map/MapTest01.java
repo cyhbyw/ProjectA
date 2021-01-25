@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 import org.junit.Before;
 import org.junit.Test;
@@ -73,5 +74,10 @@ public class MapTest01 {
             Collectors.groupingBy(a -> a.getType(),
                 Collectors.reducing(BigDecimal.ZERO, Bill::getAmount, (x, y) -> x.add(y))));
         groupMap.forEach((k, v) -> System.out.println(k + "  " + v));
+
+        // groupingBy 分组后，再对组内的 List<Bill> 提取关键字段并聚集之
+        Map<String, Set<BigDecimal>> groupSetMap = bills.stream().collect(
+            Collectors.groupingBy(a -> a.getType(), Collectors.mapping(b -> b.getAmount(), Collectors.toSet())));
+        groupSetMap.forEach((k, v) -> System.out.println(k + "  " + v));
     }
 }
