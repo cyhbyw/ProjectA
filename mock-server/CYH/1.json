@@ -1,0 +1,17 @@
+{
+    "data": [
+        {
+            "generateId": "customizedResponseType:type=string,generateMethod=uuid,bit=32",
+            "changecodeId": "606873578402480128",
+            "aid": "2222",
+            "redeemcode": "UBQ2KZIXNDKSD",
+            "user": {
+                "name": "cyh",
+                "age": 30
+            }
+        }
+    ],
+    "returnStatus": "SUCCESS",
+    "returnStatusCode": "CDP.TICKET.200",
+    "returnMessage": "OK"
+}
