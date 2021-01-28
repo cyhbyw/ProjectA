@@ -6,11 +6,26 @@
             "aid": "2222",
             "redeemcode": "UBQ2KZIXNDKSD",
             "user": {
-                "name": "cyh",
-                "age": 30
+                "name": "customizedResponseType:type=string,generateMethod=uuid,bit=10",
+                "age": 30,
+                "lover": [
+                    {
+                        "name": "customizedResponseType:type=string,generateMethod=uuid,bit=5"
+                    }
+                ]
             }
         }
     ],
+    "data2": {
+        "one": [
+            "a",
+            "b",
+            "c"
+        ],
+        "two": {
+            "two_one": "customizedResponseType:type=string,generateMethod=uuid,bit=5"
+        }
+    },
     "returnStatus": "SUCCESS",
     "returnStatusCode": "CDP.TICKET.200",
     "returnMessage": "OK"
