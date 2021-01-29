@@ -25,6 +25,11 @@ public class MockInterfaceVo {
     private String jsonBody;
 
     /**
+     * 文件内容
+     */
+    private String mapFileContent;
+
+    /**
      * 响应 json
      */
     private String jsonResponse = "{\n"
@@ -47,6 +52,7 @@ public class MockInterfaceVo {
         + "        }\n"
         + "    ],\n"
         + "    \"data2\": {\n"
+        + "        \"aid\": \"mapFileResponseType:mapParams=vin,tenantId\",\n"
         + "        \"one\": [\n"
         + "            \"a\",\n"
         + "            \"b\",\n"
@@ -56,7 +62,7 @@ public class MockInterfaceVo {
         + "            \"two_one\": \"customizedResponseType:type=string;generateMethod=uuid;length=5\"\n"
         + "        }\n"
         + "    },\n"
-        + "    \"returnStatus\": \"SUCCESS\",\n"
+        + "    \"returnStatus\": \"customizedResponseType:type=string;generateMethod=uuid;length=8\",\n"
         + "    \"returnStatusCode\": \"CDP.TICKET.200\",\n"
         + "    \"returnMessage\": \"OK\"\n"
         + "}\n";

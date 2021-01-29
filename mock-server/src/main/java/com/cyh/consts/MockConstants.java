@@ -7,6 +7,7 @@ package com.cyh.consts;
 public interface MockConstants {
 
     String CUSTOMIZED_RESPONSE_TYPE = "customizedResponseType:";
+    String MAP_FILE_RESPONSE_TYPE = "mapFileResponseType:";
 
     String SP = ";";
 
@@ -15,5 +16,7 @@ public interface MockConstants {
     String SP_RANGE = "-";
 
     String SP_COMMA = ",";
+
+    String SP_FILE_CONTENT = "---->mapFileResponseType<----";
 
 }

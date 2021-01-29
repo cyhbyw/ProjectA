@@ -1,0 +1,3 @@
+{"vin":"testVinA","tenantId":"VW"}---->mapFileResponseType<----{"aid":33}
+{"vin":"testVinB","tenantId":"VW"}---->mapFileResponseType<----{"aid":33}
+{"vin":"testVinC","tenantId":"VW"}---->mapFileResponseType<----{"aid":33}

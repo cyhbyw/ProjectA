@@ -18,6 +18,7 @@
         }
     ],
     "data2": {
+        "aid": "mapFileResponseType:mapParams=vin,tenantId",
         "one": [
             "a",
             "b",
@@ -27,7 +28,7 @@
             "two_one": "customizedResponseType:type=string;generateMethod=uuid;length=5"
         }
     },
-    "returnStatus": "SUCCESS",
+    "returnStatus": "customizedResponseType:type=string;generateMethod=uuid;length=8",
     "returnStatusCode": "CDP.TICKET.200",
     "returnMessage": "OK"
 }
