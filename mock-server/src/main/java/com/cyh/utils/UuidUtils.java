@@ -12,12 +12,12 @@ public final class UuidUtils {
         return UUID.randomUUID().toString().toUpperCase().replaceAll("-", "");
     }
 
-    public static final String upperNoLine(int bit) {
+    public static final String upperNoLine(int length) {
         String uuid = upperNoLine();
-        if (bit > uuid.length()) {
+        if (length > uuid.length()) {
             // todo
         }
-        return uuid.substring(0, bit);
+        return uuid.substring(0, length);
     }
 
 

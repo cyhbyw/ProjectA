@@ -8,4 +8,12 @@ public interface MockConstants {
 
     String CUSTOMIZED_RESPONSE_TYPE = "customizedResponseType:";
 
+    String SP = ";";
+
+    String SP_KV = "=";
+
+    String SP_RANGE = "-";
+
+    String SP_COMMA = ",";
+
 }
