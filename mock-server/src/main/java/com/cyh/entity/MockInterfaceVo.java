@@ -32,39 +32,6 @@ public class MockInterfaceVo {
     /**
      * 响应 json
      */
-    private String jsonResponse = "{\n"
-        + "    \"data\": [\n"
-        + "        {\n"
-        + "            \"generateId\": \"customizedResponseType:type=string;generateMethod=uuid;length=32\",\n"
-        + "            \"changecodeId\": \"606873578402480128\",\n"
-        + "            \"aid\": \"2222\",\n"
-        + "            \"redeemcode\": \"UBQ2KZIXNDKSD\",\n"
-        + "            \"user\": {\n"
-        + "                \"name\": \"customizedResponseType:type=string;generateMethod=uuid;length=10\",\n"
-        + "                \"age\": \"customizedResponseType:type=integer;range=0-100\",\n"
-        + "                \"sex\": \"customizedResponseType:type=enum;values=male,female,boy,girl\",\n"
-        + "                \"lover\": [\n"
-        + "                    {\n"
-        + "                        \"name\": \"customizedResponseType:type=string;generateMethod=uuid;length=5\"\n"
-        + "                    }\n"
-        + "                ]\n"
-        + "            }\n"
-        + "        }\n"
-        + "    ],\n"
-        + "    \"data2\": {\n"
-        + "        \"aid\": \"mapFileResponseType:mapParams=vin,tenantId\",\n"
-        + "        \"one\": [\n"
-        + "            \"a\",\n"
-        + "            \"b\",\n"
-        + "            \"c\"\n"
-        + "        ],\n"
-        + "        \"two\": {\n"
-        + "            \"two_one\": \"customizedResponseType:type=string;generateMethod=uuid;length=5\"\n"
-        + "        }\n"
-        + "    },\n"
-        + "    \"returnStatus\": \"customizedResponseType:type=string;generateMethod=uuid;length=8\",\n"
-        + "    \"returnStatusCode\": \"CDP.TICKET.200\",\n"
-        + "    \"returnMessage\": \"OK\"\n"
-        + "}\n";
+    private String jsonResponse;
 
 }
