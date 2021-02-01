@@ -19,7 +19,7 @@ public class JoinFileContentToOneLine {
     }
 
     private void run() throws Exception {
-        final Path path = Paths.get("D:\\code_cyh_personal\\ProjectA\\mock-server\\CYH\\2.json");
+        final Path path = Paths.get("D:\\code_cyh_personal\\ProjectA\\mock-server\\CYH\\join_to_one_line.txt");
         StringBuilder all = new StringBuilder();
         final List<String> allLines = Files.readAllLines(path, StandardCharsets.UTF_8);
         for (String line : allLines) {

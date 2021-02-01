@@ -1,0 +1,5 @@
+[100001]---->mapFileResponseType<----{"mobile":"18800001111"}\n
+[100002]---->mapFileResponseType<----{"mobile":"18800001112"}\n
+[100003]---->mapFileResponseType<----{"mobile":"18800001113"}\n
+[100004]---->mapFileResponseType<----{"mobile":"18800001114"}\n
+[100005]---->mapFileResponseType<----{"mobile":"18800001115"}

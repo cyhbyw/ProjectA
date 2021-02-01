@@ -1,0 +1,10 @@
+{
+    "data": [
+        {
+            "mobile": "mapFileResponseType:bodyParams=wholeJson"
+        }
+    ],
+    "returnStatus": "SUCCESS",
+    "returnStatusCode": "CDP.TICKET.200",
+    "returnMessage": "OK"
+}

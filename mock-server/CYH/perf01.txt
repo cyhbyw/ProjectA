@@ -1,0 +1,5 @@
+{"vin":"perfTestVinA"}---->mapFileResponseType<----{"aid":100001}\n
+{"vin":"perfTestVinB"}---->mapFileResponseType<----{"aid":100002}\n
+{"vin":"perfTestVinC"}---->mapFileResponseType<----{"aid":100003}\n
+{"vin":"perfTestVinD"}---->mapFileResponseType<----{"aid":100004}\n
+{"vin":"perfTestVinE"}---->mapFileResponseType<----{"aid":100005}
