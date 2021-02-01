@@ -213,18 +213,42 @@ public class MockServerController {
         List<String> bodyParams = split(MockConstants.SP_COMMA, configValue);
         if (bodyParams.size() == 1 && "wholeJson".equalsIgnoreCase(bodyParams.get(0))) {
             final String bodyContent = readBody();
-            final JSONObject paramObject = JSON.parseObject(bodyContent);
-            for (String line : fileLines) {
-                final List<String> requestResponse = split(MockConstants.SP_FILE_CONTENT, line);
-                JSONObject requestJson = JSON.parseObject(requestResponse.get(0));
-                if (Objects.equals(paramObject, requestJson)) {
-                    log.info("suitable response found: {}", requestResponse.get(1));
-                    JSONObject responseJson = JSON.parseObject(requestResponse.get(1));
-                    return responseJson.get(key);
+            final char firstChar = findFirstValidChar(bodyContent);
+            if (firstChar == '{') {
+                final JSONObject paramObject = JSON.parseObject(bodyContent);
+                for (String line : fileLines) {
+                    final List<String> requestResponse = split(MockConstants.SP_FILE_CONTENT, line);
+                    JSONObject requestJson = JSON.parseObject(requestResponse.get(0));
+                    if (Objects.equals(paramObject, requestJson)) {
+                        log.info("suitable response found: {}", requestResponse.get(1));
+                        JSONObject responseJson = JSON.parseObject(requestResponse.get(1));
+                        return responseJson.get(key);
+                    }
+                }
+            } else if (firstChar == '[') {
+                final JSONArray jsonArray = JSON.parseArray(bodyContent);
+                for (String line : fileLines) {
+                    final List<String> requestResponse = split(MockConstants.SP_FILE_CONTENT, line);
+                    final JSONArray array = JSON.parseArray(requestResponse.get(0));
+                    if (Objects.equals(jsonArray, array)) {
+                        // todo 不能直接 parseObject，有可能是数组
+                        JSONObject responseJson = JSON.parseObject(requestResponse.get(1));
+                        return responseJson.get(key);
+                    }
                 }
             }
         }
         return value;
+    }
+
+    private char findFirstValidChar(String bodyContent) {
+        int len = bodyContent.length();
+        for (int i = 0; i < len; i++) {
+            if (bodyContent.charAt(i) != ' ') {
+                return bodyContent.charAt(i);
+            }
+        }
+        throw new RuntimeException(String.format("Invalid json format. {}", bodyContent));
     }
 
     private String readBody() {
