@@ -18,7 +18,7 @@
         }
     ],
     "data2": {
-        "aid": "mapFileResponseType:mapParams=vin,tenantId",
+        "aid": "mapFileResponseType:requestParams=vin,tenantId",
         "one": [
             "a",
             "b",

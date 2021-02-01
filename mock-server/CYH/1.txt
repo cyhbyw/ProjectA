@@ -1,3 +1,4 @@
 {"vin":"testVinA","tenantId":"VW"}---->mapFileResponseType<----{"aid":33}
 {"vin":"testVinB","tenantId":"VW"}---->mapFileResponseType<----{"aid":33}
 {"vin":"testVinC","tenantId":"VW"}---->mapFileResponseType<----{"aid":33}
+{"mobiles":["13511223344"],"tenantId":"VW"}---->mapFileResponseType<----{"aids":[1478]}

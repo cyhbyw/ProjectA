@@ -174,12 +174,12 @@ public class MockServerController {
         final List<String> keyValue = split(MockConstants.SP_KV, value2);
         final String configKey = keyValue.get(0);
         final String configValue = keyValue.get(1);
-        List<String> mapParams = new ArrayList<>();
-        if ("mapParams".equalsIgnoreCase(configKey)) {
-            mapParams = split(MockConstants.SP_COMMA, configValue);
+        List<String> requestParams = new ArrayList<>();
+        if ("requestParams".equalsIgnoreCase(configKey)) {
+            requestParams = split(MockConstants.SP_COMMA, configValue);
         }
         JSONObject paramObject = new JSONObject();
-        for (String param : mapParams) {
+        for (String param : requestParams) {
             String paramValue = threadLocal.get().getParameter(param);
             paramObject.put(param, paramValue);
         }

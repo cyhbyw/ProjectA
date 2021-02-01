@@ -1,6 +1,6 @@
 {
     "data": {
-        "aid": "mapFileResponseType:mapParams=vin,tenantId",
+        "aid": "mapFileResponseType:requestParams=vin,tenantId",
         "bid": "customizedResponseType:type=string;generateMethod=uuid;length=10"
     },
     "name": "customizedResponseType:type=string;generateMethod=uuid;length=10"
