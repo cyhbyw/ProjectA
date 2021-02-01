@@ -8,6 +8,7 @@ import com.cyh.entity.MockInterfaceVo;
 import com.cyh.entity.ResponseTypeConfigEntity;
 import com.cyh.utils.UuidUtils;
 import com.google.common.base.Splitter;
+import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map.Entry;
@@ -15,6 +16,7 @@ import java.util.Objects;
 import java.util.Random;
 import javax.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -174,19 +176,27 @@ public class MockServerController {
         final List<String> keyValue = split(MockConstants.SP_KV, value2);
         final String configKey = keyValue.get(0);
         final String configValue = keyValue.get(1);
-        List<String> requestParams = new ArrayList<>();
+        final String uri = threadLocal.get().getRequestURI().substring(5); /**    /mock    */
+        final MockInterfaceVo vo = mockList.stream().filter(x -> x.getUri().equals(uri)).findFirst().get();
+        final String fileContent = vo.getMapFileContent();
+        final List<String> fileLines = split("\n", fileContent);
+
         if ("requestParams".equalsIgnoreCase(configKey)) {
-            requestParams = split(MockConstants.SP_COMMA, configValue);
+            return mapRequestParams(configValue, fileLines, key, value);
+        } else if ("bodyParams".equalsIgnoreCase(configKey)) {
+            return mapBodyParams(configValue, fileLines, key, value);
+        } else {
+            return value;
         }
+    }
+
+    private Object mapRequestParams(String configValue, List<String> fileLines, String key, Object value) {
+        List<String> requestParams = split(MockConstants.SP_COMMA, configValue);
         JSONObject paramObject = new JSONObject();
         for (String param : requestParams) {
             String paramValue = threadLocal.get().getParameter(param);
             paramObject.put(param, paramValue);
         }
-        final String uri = threadLocal.get().getRequestURI().substring(5); /**    /mock    */
-        MockInterfaceVo vo = mockList.stream().filter(x -> x.getUri().equals(uri)).findFirst().get();
-        final String fileContent = vo.getMapFileContent();
-        List<String> fileLines = split("\n", fileContent);
         for (String line : fileLines) {
             final List<String> requestResponse = split(MockConstants.SP_FILE_CONTENT, line);
             JSONObject requestJson = JSON.parseObject(requestResponse.get(0));
@@ -196,10 +206,42 @@ public class MockServerController {
                 return responseJson.get(key);
             }
         }
+        return value;
+    }
 
-        log.info("paramObject={} fileContent={}", paramObject, fileContent);
+    private Object mapBodyParams(String configValue, List<String> fileLines, String key, Object value) {
+        List<String> bodyParams = split(MockConstants.SP_COMMA, configValue);
+        if (bodyParams.size() == 1 && "wholeJson".equalsIgnoreCase(bodyParams.get(0))) {
+            final String bodyContent = readBody();
+            final JSONObject paramObject = JSON.parseObject(bodyContent);
+            for (String line : fileLines) {
+                final List<String> requestResponse = split(MockConstants.SP_FILE_CONTENT, line);
+                JSONObject requestJson = JSON.parseObject(requestResponse.get(0));
+                if (Objects.equals(paramObject, requestJson)) {
+                    log.info("suitable response found: {}", requestResponse.get(1));
+                    JSONObject responseJson = JSON.parseObject(requestResponse.get(1));
+                    return responseJson.get(key);
+                }
+            }
+        }
+        return value;
+    }
 
-        return null;
+    private String readBody() {
+        String line;
+        StringBuilder builder = new StringBuilder();
+        BufferedReader bufferedReader = null;
+        try {
+            bufferedReader = threadLocal.get().getReader();
+            while (StringUtils.isNotBlank(line = bufferedReader.readLine())) {
+                builder.append(line);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("Read request body error.", e);
+        } finally {
+            IOUtils.closeQuietly(bufferedReader);
+        }
+        return builder.toString();
     }
 
     private List<String> split(String sp, String value) {

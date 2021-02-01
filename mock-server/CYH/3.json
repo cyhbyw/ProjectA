@@ -1,1 +1,6 @@
-{"aid":33}
+{
+    "data": {
+        "aids": "mapFileResponseType:bodyParams=wholeJson"
+    },
+    "name": "customizedResponseType:type=string;generateMethod=uuid;length=10"
+}
