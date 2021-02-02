@@ -9,6 +9,7 @@ import com.cyh.entity.ResponseTypeConfigEntity;
 import com.cyh.utils.UuidUtils;
 import com.google.common.base.Splitter;
 import java.io.BufferedReader;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -20,10 +21,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -62,16 +61,9 @@ public class MockServerController {
         return new String(bytes);
     }
 
-    @PutMapping("/modifyMockInterface")
-    public void modifyMockInterface() {
-    }
-
-    @GetMapping("/getMockInterface")
-    public void getMockInterface() {
-    }
-
-    @DeleteMapping("/deleteMockInterface")
-    public void deleteMockInterface() {
+    @GetMapping("/ping")
+    public String ping() {
+        return "Pong from mock-server(yanhua.chen): " + LocalDateTime.now();
     }
 
     @RequestMapping(value = "/mock/**", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
