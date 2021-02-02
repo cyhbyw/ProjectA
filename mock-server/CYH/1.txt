@@ -1,4 +1,6 @@
-{"vin":"testVinA","tenantId":"VW"}---->mapFileResponseType<----{"aid":33}
-{"vin":"testVinB","tenantId":"VW"}---->mapFileResponseType<----{"aid":33}
-{"vin":"testVinC","tenantId":"VW"}---->mapFileResponseType<----{"aid":33}
-{"mobiles":["13511223344"],"tenantId":"VW"}---->mapFileResponseType<----{"aids":[1478]}
+  vin           phone      aid  brand
+perfTestVinA 18800001111 100001 VW
+perfTestVinB 18800001112 100002 VW
+perfTestVinC 18800001113 100003 VW
+perfTestVinD 18800001114 100004 AUDI
+perfTestVinE 18800001115 100005 AUDI
