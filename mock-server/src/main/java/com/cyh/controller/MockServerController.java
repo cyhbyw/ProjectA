@@ -9,11 +9,12 @@ import com.cyh.entity.ResponseTypeConfigEntity;
 import com.cyh.utils.UuidUtils;
 import com.google.common.base.Splitter;
 import java.io.BufferedReader;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Objects;
 import java.util.Random;
+import java.util.concurrent.ConcurrentHashMap;
 import javax.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
@@ -32,7 +33,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 public class MockServerController {
 
-    private List<MockInterfaceVo> mockList = new ArrayList<>(); // todo use set instead
+    private Map<String, MockInterfaceVo> mockMap = new ConcurrentHashMap();
     private ThreadLocal<HttpServletRequest> threadLocal = new ThreadLocal<>();
     private ThreadLocal<String> bodyThreadLocal = new ThreadLocal<>();
 
@@ -42,8 +43,15 @@ public class MockServerController {
         if (StringUtils.isBlank(vo.getMapFileContent())) {
             vo.setMapFileContent(getFileContent(file));
         }
-        mockList.add(vo);
+        mockMap.put(buildMapKey(vo.getRequestType(), vo.getUri()), vo);
         return "SUCCESS";
+    }
+
+    /**
+     * GET /public/user/v1/add
+     */
+    private String buildMapKey(String method, String uri) {
+        return method + " " + uri;
     }
 
     private String getFileContent(MultipartFile file) throws Exception {
@@ -70,14 +78,9 @@ public class MockServerController {
     public String mock(HttpServletRequest request) {
         threadLocal.set(request);
 
+        final String method = request.getMethod();
         final String uri = request.getRequestURI().substring(5); /**    /mock    */
-        MockInterfaceVo vo = null;
-        for (int i = mockList.size() - 1; i >= 0; i--) {
-            if (uri.equalsIgnoreCase(mockList.get(i).getUri())) {
-                vo = mockList.get(i);
-                break;
-            }
-        }
+        MockInterfaceVo vo = mockMap.get(buildMapKey(method, uri));
         if (Objects.isNull(vo)) {
             throw new RuntimeException(String.format("路径%s没有设置Mock", uri));
         }
@@ -186,7 +189,8 @@ public class MockServerController {
         final String configKey = keyValue.get(0);
         final String configValue = keyValue.get(1);
         final String uri = threadLocal.get().getRequestURI().substring(5); /**    /mock    */
-        final MockInterfaceVo vo = mockList.stream().filter(x -> x.getUri().equals(uri)).findFirst().get();
+        final String method = threadLocal.get().getMethod();
+        final MockInterfaceVo vo = mockMap.get(buildMapKey(method, uri));
         final String fileContent = vo.getMapFileContent();
         final List<String> fileLines = split("\n", fileContent);
 

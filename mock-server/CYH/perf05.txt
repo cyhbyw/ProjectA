@@ -1,0 +1,5 @@
+{"mobiles":["18800001111"],"tenantId":"VW"}---->mapFileResponseType<----{"aids":[100001]}\n
+{"mobiles":["18800001112"],"tenantId":"VW"}---->mapFileResponseType<----{"aids":[100002]}\n
+{"mobiles":["18800001113"],"tenantId":"VW"}---->mapFileResponseType<----{"aids":[100003]}\n
+{"mobiles":["18800001114"],"tenantId":"AUDI"}---->mapFileResponseType<----{"aids":[100004]}\n
+{"mobiles":["18800001115"],"tenantId":"AUDI"}---->mapFileResponseType<----{"aids":[100005]}
