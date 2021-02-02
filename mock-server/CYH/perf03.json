@@ -1,0 +1,6 @@
+{
+    "data": "mapFileResponseType:requestParams=vin,tenantId",
+    "returnStatus": "SUCCESS",
+    "returnStatusCode": "CDP.TICKET.200",
+    "returnMessage": "OK"
+}

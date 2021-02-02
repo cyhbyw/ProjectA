@@ -1,0 +1,5 @@
+{"vin":"perfTestVinA","tenantId":"VW"}---->mapFileResponseType<----{"data":["18800001111"]}\n
+{"vin":"perfTestVinB","tenantId":"VW"}---->mapFileResponseType<----{"data":["18800001112"]}\n
+{"vin":"perfTestVinC","tenantId":"VW"}---->mapFileResponseType<----{"data":["18800001113"]}\n
+{"vin":"perfTestVinD","tenantId":"AUDI"}---->mapFileResponseType<----{"data":["18800001114"]}\n
+{"vin":"perfTestVinE","tenantId":"AUDI"}---->mapFileResponseType<----{"data":["18800001115"]}

@@ -32,8 +32,9 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 public class MockServerController {
 
-    private List<MockInterfaceVo> mockList = new ArrayList<>();
+    private List<MockInterfaceVo> mockList = new ArrayList<>(); // todo use set instead
     private ThreadLocal<HttpServletRequest> threadLocal = new ThreadLocal<>();
+    private ThreadLocal<String> bodyThreadLocal = new ThreadLocal<>();
 
     @PostMapping("/addMockInterface")
     public String addMockInterface(@RequestBody MockInterfaceVo vo, MultipartFile file) throws Exception {
@@ -46,7 +47,7 @@ public class MockServerController {
     }
 
     private String getFileContent(MultipartFile file) throws Exception {
-        final byte[] bytes = file.getBytes();
+        final byte[] bytes = Objects.isNull(file) ? null : file.getBytes();
         if (Objects.isNull(bytes) || bytes.length == 0) {
             return null;
         }
@@ -70,11 +71,18 @@ public class MockServerController {
         threadLocal.set(request);
 
         final String uri = request.getRequestURI().substring(5); /**    /mock    */
-        MockInterfaceVo vo = mockList.stream().filter(x -> x.getUri().equals(uri)).findFirst().get();
+        MockInterfaceVo vo = null;
+        for (int i = mockList.size() - 1; i >= 0; i--) {
+            if (uri.equalsIgnoreCase(mockList.get(i).getUri())) {
+                vo = mockList.get(i);
+                break;
+            }
+        }
         if (Objects.isNull(vo)) {
             throw new RuntimeException(String.format("路径%s没有设置Mock", uri));
         }
 
+        bodyThreadLocal.set(readBody());
         final String result = vo.getJsonResponse();
         JSONObject jsonObject = JSON.parseObject(result);
         for (Entry<String, Object> entry : jsonObject.entrySet()) {
@@ -115,6 +123,7 @@ public class MockServerController {
     private Object tryReplace(String key, Object value) {
         value = tryHandleCustomizedResponseType(value);
         value = tryHandleMapFileResponseType(key, value);
+        value = tryHandleAlignRequestResponseType(value);
         return value;
     }
 
@@ -190,6 +199,38 @@ public class MockServerController {
         }
     }
 
+    private Object tryHandleAlignRequestResponseType(Object value) {
+        if (!(value instanceof String)) {
+            return value;
+        }
+        String value2 = (String) value;
+        if (!(value2.startsWith(MockConstants.ALIGN_REQUEST_RESPONSE_TYPE))) {
+            return value;
+        }
+
+        final String requestKey = value2.substring(MockConstants.ALIGN_REQUEST_RESPONSE_TYPE.length());
+        final List<String> keyList = split(MockConstants.SP_DOT, requestKey);
+        final char firstChar = findFirstValidChar(bodyThreadLocal.get());
+        if (firstChar == '{') {
+            JSONObject paramObject = JSON.parseObject(bodyThreadLocal.get());
+            Object lastValue = null;
+            for (int index = 0; index < keyList.size(); index++) {
+                final String key = keyList.get(index);
+                final Object tempValue = paramObject.get(key);
+                lastValue = tempValue;
+                if (tempValue instanceof JSONObject) {
+                    paramObject = (JSONObject) tempValue;
+                } else if (tempValue instanceof JSONArray) {
+                    paramObject = (JSONObject) ((JSONArray) tempValue).get(0); // TODO 对象数组不好处理
+                }
+            }
+            return lastValue;
+        } else if (firstChar == '[') {
+            throw new RuntimeException("not support");
+        }
+        return value;
+    }
+
     private Object mapRequestParams(String configValue, List<String> fileLines, String key, Object value) {
         List<String> requestParams = split(MockConstants.SP_COMMA, configValue);
         JSONObject paramObject = new JSONObject();
@@ -212,7 +253,7 @@ public class MockServerController {
     private Object mapBodyParams(String configValue, List<String> fileLines, String key, Object value) {
         List<String> bodyParams = split(MockConstants.SP_COMMA, configValue);
         if (bodyParams.size() == 1 && "wholeJson".equalsIgnoreCase(bodyParams.get(0))) {
-            final String bodyContent = readBody();
+            final String bodyContent = bodyThreadLocal.get();
             final char firstChar = findFirstValidChar(bodyContent);
             if (firstChar == '{') {
                 final JSONObject paramObject = JSON.parseObject(bodyContent);

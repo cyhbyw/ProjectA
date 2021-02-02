@@ -1,0 +1,13 @@
+{
+    "data": [
+        {
+            "generateId": "alignRequestResponseType:generateId",
+            "changecodeId": "customizedResponseType:type=string;generateMethod=uuid;length=20",
+            "aid": "alignRequestResponseType:ticketUserList.aid",
+            "redeemcode": null
+        }
+    ],
+    "returnStatus": "SUCCESS",
+    "returnStatusCode": "CDP.TICKET.200",
+    "returnMessage": "OK"
+}
