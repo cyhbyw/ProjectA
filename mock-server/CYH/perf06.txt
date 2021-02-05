@@ -1,3 +1,14 @@
-{"aid":"100001"}---->mapFileResponseType<----{"data":[{"ticketId":"aa","vin":"","phone":"","deductionAmount":"","freezeAmount":"","verifyAmount":""},{"ticketId":"bb","vin":"","phone":"","deductionAmount":"","freezeAmount":"","verifyAmount":""}]}\n
-{"aid":"100002"}---->mapFileResponseType<----{"data":[{"ticketId":"cc","vin":"","phone":"","deductionAmount":"","freezeAmount":"","verifyAmount":""},{"ticketId":"dd","vin":"","phone":"","deductionAmount":"","freezeAmount":"","verifyAmount":""}]}\n
-{"aid":"100003"}---->mapFileResponseType<----{"data":[{"ticketId":"ee","vin":"","phone":"","deductionAmount":"","freezeAmount":"","verifyAmount":""},{"ticketId":"ee","vin":"","phone":"","deductionAmount":"","freezeAmount":"","verifyAmount":""}]}
+{"aid":"100001"}---->mapFileResponseType<----{"data":[]}
+
+
+
+{"aid":"100001","changecodeId":"DC65B192FA564125BB0B","vin":"perfTestVinA","phone":"18800001111","usableAmount":"200","starttime":"2021-01-13 10:04:04","endtime":"2021-05-05 11:11:11","totalCount": 16},
+{"aid":"100001","changecodeId":"028FC93242ED439E8A44","vin":"perfTestVinA","phone":"18800001111","usableAmount":"200","starttime":"2021-01-13 10:04:04","endtime":"2021-05-05 11:11:11","totalCount": 16},
+{"aid":"100001","changecodeId":"30EB0C8219C54E708AC4","vin":"perfTestVinA","phone":"18800001111","usableAmount":"200","starttime":"2021-01-13 10:04:04","endtime":"2021-05-05 11:11:11","totalCount": 16},
+{"aid":"100001","changecodeId":"336ED3DF6D8F4ECE906B","vin":"perfTestVinA","phone":"18800001111","usableAmount":"200","starttime":"2021-01-13 10:04:04","endtime":"2021-05-05 11:11:11","totalCount": 16},
+{"aid":"100001","changecodeId":"35CF6ED591CF4B45BF8F","vin":"perfTestVinA","phone":"18800001111","usableAmount":"200","starttime":"2021-01-13 10:04:04","endtime":"2021-05-05 11:11:11","totalCount": 16},
+{"aid":"100001","changecodeId":"743498845FF04F54BF04","vin":"perfTestVinA","phone":"18800001111","usableAmount":"200","starttime":"2021-01-13 10:04:04","endtime":"2021-05-05 11:11:11","totalCount": 16},
+{"aid":"100001","changecodeId":"A0A24B90CF6149C48951","vin":"perfTestVinA","phone":"18800001111","usableAmount":"200","starttime":"2021-01-13 10:04:04","endtime":"2021-05-05 11:11:11","totalCount": 16},
+{"aid":"100001","changecodeId":"148F22F879194CC5A4A7","vin":"perfTestVinA","phone":"18800001111","usableAmount":"200","starttime":"2021-01-13 10:04:04","endtime":"2021-05-05 11:11:11","totalCount": 16},
+{"aid":"100001","changecodeId":"230214BFDE034C94B025","vin":"perfTestVinA","phone":"18800001111","usableAmount":"200","starttime":"2021-01-13 10:04:04","endtime":"2021-05-05 11:11:11","totalCount": 16},
+{"aid":"100001","changecodeId":"8C40D852F9C94AA2B128","vin":"perfTestVinA","phone":"18800001111","usableAmount":"200","starttime":"2021-01-13 10:04:04","endtime":"2021-05-05 11:11:11","totalCount": 16}
