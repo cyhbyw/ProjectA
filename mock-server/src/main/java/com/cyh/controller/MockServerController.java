@@ -274,6 +274,28 @@ public class MockServerController {
                     }
                 }
             }
+        } else {
+            final String bodyContent = bodyThreadLocal.get();
+            final char firstChar = findFirstValidChar(bodyContent);
+            if (firstChar == '{') {
+                final JSONObject paramObject = JSON.parseObject(bodyContent);
+                JSONObject reconstructParamObject = new JSONObject();
+                for (String paramName : bodyParams) {
+                    final Object paramValue = paramObject.get(paramName);
+                    reconstructParamObject.put(paramName, paramValue);
+                }
+                for (String line : fileLines) {
+                    final List<String> requestResponse = split(MockConstants.SP_FILE_CONTENT, line);
+                    JSONObject requestJson = JSON.parseObject(requestResponse.get(0));
+                    if (Objects.equals(reconstructParamObject, requestJson)) {
+                        // todo 不能直接 parseObject，有可能是数组
+                        JSONObject responseJson = JSON.parseObject(requestResponse.get(1));
+                        return responseJson.get(key);
+                    }
+                }
+            } else {
+                throw new RuntimeException("not support");
+            }
         }
         return value;
     }
